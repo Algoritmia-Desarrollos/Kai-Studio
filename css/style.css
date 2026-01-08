@@ -114,3 +114,54 @@ h1, h2, h3 {
     .grid-3 { grid-template-columns: repeat(3, 1fr); }
     .hero-wrapper { min-height: 90vh; }
 }
+
+/* --- 🚑 PARCHE DE EMERGENCIA: FORZAR VISIBILIDAD --- */
+/* Si el JS falla, esto asegura que la web se vea igual */
+.reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+}
+
+#preloader {
+    display: none !important; /* Ocultamos el preloader para ver si hay web debajo */
+}
+
+
+/* --- ESTILOS EXTRA COMPONENTES --- */
+
+/* Navbar Scroll */
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Nav Actions */
+.nav-content { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.nav-actions { display: flex; align-items: center; gap: 1rem; }
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed; top: var(--header-height); left: 0; width: 100%;
+    background: var(--bg-body); padding: 2rem;
+    border-bottom: 1px solid var(--border-light);
+    transform: translateY(-150%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 900; display: flex; flex-direction: column; gap: 1.5rem;
+}
+.mobile-menu.active { transform: translateY(0); box-shadow: var(--shadow-md); }
+.mobile-link { font-size: 1.25rem; font-weight: 600; text-decoration: none; color: var(--text-primary); }
+
+.hamburger { background: none; border: none; cursor: pointer; display: none; padding: 0.5rem; }
+
+/* Footer Links */
+.footer-links { list-style: none; padding: 0; margin: 0; }
+.footer-links li { margin-bottom: 0.75rem; }
+.footer-links a { text-decoration: none; color: var(--text-secondary); transition: color 0.2s; display: flex; align-items: center; gap: 0.5rem; }
+.footer-links a:hover { color: var(--color-black); }
+
+/* Responsive Logic */
+@media (max-width: 768px) {
+    .desktop-only { display: none; }
+    .mobile-hidden { display: none !important; } /* Ocultar botón CTA desktop en móvil */
+    .hamburger { display: block; }
+}
