@@ -1,54 +1,35 @@
 /* =========================================
-   KAI STUDIO | SYSTEM DESIGN V1.0
-   Opción C: Luxury Black (Monocromo High-End)
+   KAI STUDIO | SYSTEM DESIGN V2.0 (REFINED)
    ========================================= */
-
 :root {
-    /* --- PALETA CROMÁTICA (MONOCHROME LUXURY) --- */
+    /* --- PALETA CROMÁTICA (LUXURY MONOCHROME) --- */
     --color-white:       #ffffff;
-    --color-black:       #0a0a0a;  /* No es negro absoluto (#000) para evitar fatiga visual, es un "Rich Black" */
+    --color-black:       #0a0a0a;  /* Rich Black */
     
-    /* Fondos */
     --bg-body:           var(--color-white);
-    --bg-surface:        #f4f4f5;  /* Gris muy sutil para tarjetas/secciones alternas */
-    --bg-dark:           var(--color-black); /* Para Footer o secciones de alto impacto */
+    --bg-surface:        #f4f4f5;  /* Gris sutil */
+    --bg-dark:           var(--color-black);
+    --bg-glass:          rgba(255, 255, 255, 0.85);
 
-    /* Tipografía */
+    /* --- TIPOGRAFÍA --- */
+    --font-main:         'Inter', system-ui, -apple-system, sans-serif;
     --text-primary:      var(--color-black);
-    --text-secondary:    #52525b;  /* Gris medio para descripciones, alto contraste de lectura */
-    --text-inverse:      var(--color-white); /* Texto sobre fondos oscuros */
-    
-    /* Acentos & Bordes (El "Color" es la ausencia de color) */
-    --accent:            var(--color-black); /* Botones, Enlaces, Hover */
-    --border-light:      #e4e4e7;  /* Líneas sutiles de separación */
+    --text-secondary:    #52525b;
+    --text-inverse:      #e4e4e7; /* Texto en fondo oscuro */
+
+    /* --- BORDES & LÍNEAS --- */
+    --border-light:      #e4e4e7;
     --border-focus:      var(--color-black);
 
-    /* --- TIPOGRAFÍA (MODERNA & GEOMÉTRICA) --- */
-    /* Usaremos Inter para todo, o Space Grotesk para títulos si quieres un toque más "Tech" después */
-    --font-main:         'Inter', system-ui, -apple-system, sans-serif;
-    
-    /* Escala Tipográfica (Fluid Typography) */
-    --text-xs:           0.75rem;  /* 12px */
-    --text-sm:           0.875rem; /* 14px */
-    --text-base:         1rem;     /* 16px */
-    --text-lg:           1.125rem; /* 18px */
-    --text-xl:           1.25rem;  /* 20px */
-    --text-2xl:          1.5rem;   /* 24px */
-    --text-display:      clamp(2.5rem, 5vw, 4.5rem); /* Títulos gigantes estilo editorial */
-
     /* --- ESPACIADO & LAYOUT --- */
-    --container-width:   1280px;   /* Más ancho que el estándar para airear el contenido */
+    --container-width:   1280px;
     --header-height:     5rem;
-    --section-spacing:   clamp(5rem, 8vw, 8rem); /* Mucho aire entre secciones */
-    --radius-sm:         4px;      /* Bordes sutiles, no muy redondos (más serio) */
-    --radius-md:         8px;
-    --radius-full:       9999px;   /* Para botones tipo "pill" */
-
-    /* --- EFECTOS & TRANSICIONES --- */
-    --shadow-sm:         0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md:         0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-hover:      0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --section-spacing:   clamp(5rem, 8vw, 8rem);
     
-    --ease-out:          cubic-bezier(0.16, 1, 0.3, 1); /* Movimiento "Apple", rápido y frena suave */
-    --transition-base:   all 0.3s var(--ease-out);
+    /* --- EFECTOS --- */
+    --shadow-sm:         0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md:         0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --radius-md:         8px;
+    --radius-full:       9999px;
+    --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
 }

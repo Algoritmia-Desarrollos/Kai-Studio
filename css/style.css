@@ -1,15 +1,16 @@
 /* =========================================
-   KAI STUDIO | CORE STYLES v2.0 (FIXED)
+   KAI STUDIO | CORE STYLES V50.0
    ========================================= */
-@import 'variables.css';
 @import 'reset.css';
+@import 'variables.css';
+@import 'animations.css';
 
-/* --- BODY & LAYOUT --- */
+/* --- BASE --- */
 body {
     background-color: var(--bg-body);
     color: var(--text-primary);
     font-family: var(--font-main);
-    font-size: var(--text-base);
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
@@ -20,218 +21,96 @@ body {
     padding: 0 1.5rem;
 }
 
-/* --- TYPOGRAPHY --- */
+/* --- TIPOGRAFÍA MAESTRA --- */
 h1, h2, h3 {
-    font-weight: 700;
+    color: var(--text-primary);
+    font-weight: 800;
     letter-spacing: -0.03em;
     line-height: 1.1;
-    color: var(--text-primary);
 }
-h1 { font-size: var(--text-display); margin-bottom: 1.5rem; }
-h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; }
-p {
-    color: var(--text-secondary);
-    font-size: var(--text-lg);
-    line-height: 1.6;
-    max-width: 65ch;
-}
-.text-sm { font-size: var(--text-sm); }
-.text-uppercase { text-transform: uppercase; letter-spacing: 0.05em; font-size: var(--text-xs); font-weight: 600; }
 
-/* --- BUTTONS --- */
+.text-display { font-size: clamp(2.5rem, 5vw, 4.5rem); }
+.text-h2 { font-size: clamp(2rem, 4vw, 3rem); }
+.text-h3 { font-size: 1.5rem; font-weight: 600; }
+.text-lg { font-size: 1.125rem; color: var(--text-secondary); }
+.text-sm { font-size: 0.875rem; }
+.text-uppercase { text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; font-size: 0.75rem; }
+.text-highlight { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px; }
+
+/* --- COMPONENTES UI --- */
 .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.875rem 2rem;
-    font-weight: 600;
-    border-radius: var(--radius-full);
-    transition: var(--transition-base);
-    gap: 0.5rem;
-    cursor: pointer;
-    text-decoration: none;
-    border: 1px solid transparent;
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 0.875rem 2rem; font-weight: 600; border-radius: var(--radius-full);
+    transition: all 0.3s var(--transition-smooth); gap: 0.5rem;
+    text-decoration: none; border: 1px solid transparent; cursor: pointer;
 }
 .btn-primary { background: var(--color-black); color: var(--color-white); }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); background: #27272a; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); background: #333; }
 .btn-secondary { background: transparent; color: var(--text-primary); border-color: var(--border-light); }
 .btn-secondary:hover { border-color: var(--color-black); background: var(--bg-surface); }
+.btn-inverse { background: var(--color-white); color: var(--color-black); } /* Botón blanco para fondo oscuro */
 
-/* --- NAVBAR BASE --- */
+/* --- NAVBAR --- */
 .navbar {
-    position: fixed;
-    top: 0; left: 0; width: 100%;
-    height: var(--header-height);
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border-light);
-    z-index: 1000;
-    display: flex; align-items: center;
+    position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height);
+    background: var(--bg-glass); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-light); z-index: 1000; display: flex; align-items: center;
 }
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+.logo { font-weight: 800; font-size: 1.5rem; display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--text-primary); }
+.logo span { background: var(--color-black); color: var(--color-white); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 4px; }
+
+/* --- SECCIONES ESPECÍFICAS (Extraídas del HTML) --- */
+
+/* Hero */
+.hero-wrapper {
+    position: relative; min-height: 85vh; display: flex; align-items: center;
+    padding-top: var(--header-height);
 }
-.logo {
-    font-weight: 800; font-size: 1.5rem; letter-spacing: -0.04em;
-    display: flex; align-items: center; gap: 0.5rem;
-    text-decoration: none; color: var(--text-primary);
+.hero-title { max-width: 18ch; margin-bottom: 2rem; }
+.hero-desc { font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 3rem; max-width: 600px; }
+
+/* Clients Grid */
+.section-clients { padding: 3rem 0; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
+.client-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 3rem; align-items: center; justify-items: center; opacity: 0.6;
 }
-.logo span {
-    background: var(--color-black); color: var(--color-white);
-    width: 32px; height: 32px; display: flex;
-    align-items: center; justify-content: center;
-    border-radius: 4px;
-}
+.client-logo { max-height: 35px; filter: grayscale(100%); transition: opacity 0.3s; opacity: 0.7; }
+.client-logo:hover { filter: grayscale(0%); opacity: 1; }
+
+/* Pillars / Services */
+.pillar-card { border-left: 1px solid var(--border-light); padding-left: 2rem; transition: transform 0.3s ease; }
+.pillar-card:hover { transform: translateX(10px); border-left-color: var(--color-black); }
+.pillar-icon { font-size: 2rem; margin-bottom: 1rem; color: var(--text-primary); }
+
+/* Filter Section (Dark) */
+.filter-section { background-color: var(--bg-dark); color: var(--color-white); padding: var(--section-spacing) 0; }
+.filter-box { background: rgba(255,255,255,0.05); padding: 3rem; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.1); }
+.filter-list li { margin-bottom: 1.5rem; display: flex; gap: 1rem; align-items: flex-start; color: var(--text-inverse); font-size: 1.1rem; }
+.filter-list i { color: var(--color-white); margin-top: 4px; font-size: 1.5rem; }
+
+/* Casos */
+.case-img-container { border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md); }
+
+/* Testimonial Quote */
+.section-quote { background-color: var(--bg-surface); padding: var(--section-spacing) 0; text-align: center; }
+.quote-avatar { width: 50px; height: 50px; border-radius: 50%; overflow: hidden; background: #ddd; }
+
+/* Footer */
+.footer-main { padding: 4rem 0; border-top: 1px solid var(--border-light); margin-top: auto; }
 
 /* --- UTILITIES --- */
+.flex-center { display: flex; align-items: center; justify-content: center; }
 .grid-2 { display: grid; grid-template-columns: 1fr; gap: 2rem; }
 .grid-3 { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+.mb-2 { margin-bottom: 1rem; } .mb-4 { margin-bottom: 2rem; }
+.mt-4 { margin-top: 2rem; } .mt-8 { margin-top: 5rem; }
+
 @media (min-width: 768px) {
-    .grid-2 { grid-template-columns: 1fr 1fr; }
+    .grid-2 { grid-template-columns: 1fr 1fr; gap: 4rem; }
     .grid-3 { grid-template-columns: repeat(3, 1fr); }
-}
-.flex-center { display: flex; align-items: center; justify-content: center; }
-.section-dark { background: var(--color-black); color: var(--color-white); }
-.section-dark p { color: #a1a1aa; }
-section { padding: var(--section-spacing) 0; }
-
-/* =========================================
-   🛡️ RESPONSIVE MENU LOGIC (CRÍTICO)
-   ========================================= */
-
-/* 1. ESTADO ESCRITORIO (Desktop Default) */
-.nav-links {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-}
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-secondary);
-    font-weight: 500;
-    transition: color 0.2s;
-}
-.nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
-
-/* El botón móvil está OCULTO por defecto */
-.mobile-toggle { display: none !important; } 
-
-/* 2. ESTADO MÓVIL (Tablets y Celulares) */
-@media (max-width: 768px) {
-    /* Ocultamos los enlaces de texto */
-    .nav-links { display: none; }
-    
-    /* Mostramos el botón hamburguesa */
-    .mobile-toggle { 
-        display: block !important; 
-        background: transparent;
-        border: none;
-        font-size: 2rem;
-        cursor: pointer;
-        padding: 0.5rem;
-    }
-}
-
-/* --- BUTTONS (REFORZADO) --- */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.875rem 2rem;
-    font-weight: 600;
-    border-radius: var(--radius-full);
-    transition: var(--transition-base);
-    gap: 0.5rem;
-    cursor: pointer;
-    text-decoration: none; /* Quita subrayado */
-    border: 1px solid transparent;
-}
-
-.btn-primary {
-    background-color: var(--color-black) !important; /* Fondo Negro Fuerte */
-    color: #ffffff !important; /* Texto BLANCO PURO forzado */
-    border: 1px solid var(--color-black);
-}
-
-.btn-primary:hover {
-    background-color: #333333 !important;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--text-primary);
-    border-color: var(--border-light);
-}
-
-.btn-secondary:hover {
-    border-color: var(--color-black);
-    background-color: var(--bg-surface);
-}
-
-/* --- NAVBAR (FIX COMPONENTE) --- */
-/* Aseguramos que el navbar tenga estilo aunque se cargue por JS */
-#navbar-container .navbar {
-    width: 100%;
-    /* Si se ve desordenado, puede ser que falte el flex en el contenedor */
-    display: flex; 
-    align-items: center;
-}
-
-/* --- PRELOADER SYSTEM --- */
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--bg-body); /* Fondo blanco/negro según tu tema */
-    z-index: 9999; /* Por encima de TODO */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.5s ease-out;
-}
-
-/* Espacio para tu GIF */
-.preloader-gif {
-    width: 100px; /* Ajusta al tamaño de tu GIF */
-    height: auto;
-    /* Si no tienes el GIF aún, usa esto temporalmente: */
-    /* animation: pulse 1.5s infinite; */
-}
-
-@keyframes pulse {
-    0% { transform: scale(0.95); opacity: 0.5; }
-    50% { transform: scale(1.05); opacity: 1; }
-    100% { transform: scale(0.95); opacity: 0.5; }
-}
-/* =========================================
-   RESPONSIVE MENU FIX (AGREGAR AL FINAL DE STYLE.CSS)
-   ========================================= */
-
-/* 1. ESCRITORIO: Ocultar bot�n hamburguesa, mostrar enlaces */
-.mobile-toggle {
-    display: none; /* Por defecto no se ve */
-}
-
-/* 2. M�VIL (Menos de 768px): Ocultar enlaces texto, mostrar hamburguesa */
-@media (max-width: 768px) {
-    /* Ocultar la lista de enlaces de texto del navbar */
-    .navbar .nav-links {
-        display: none; 
-    }
-    
-    /* Mostrar el bot�n hamburguesa */
-    .mobile-toggle {
-        display: block;
-        font-size: 2rem;
-        background: none;
-        border: none;
-        cursor: pointer;
-        color: var(--text-primary);
-    }
+    .hero-wrapper { min-height: 90vh; }
 }
