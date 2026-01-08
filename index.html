@@ -3,12 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kai Studio | Growth Partner & Estrategia Digital</title>
-    <meta name="description" content="Socio estratégico de crecimiento. Transformamos visitas en facturación.">
     
+   <title>Kai Studio | Growth Partner & Estrategia Digital</title>
+    <meta name="description" content="Socio estratégico de crecimiento. Transformamos visitas en facturación mediante tráfico, conversión y retención.">
+    <meta name="keywords" content="Growth Partner, Agencia Marketing, Desarrollo Web, Meta Ads, Kai Studio">
+    <meta name="author" content="Kai Studio">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kaistudio.net/">
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Kai Studio" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kaistudio.net/">
+    <meta property="og:title" content="Kai Studio | Growth Partner">
+    <meta property="og:description" content="No vendemos webs. Construimos sistemas de rentabilidad.">
+    <meta property="og:image" content="https://kaistudio.net/web-app-manifest-512x512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,42 +37,115 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <style>
-        .client-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 3rem; opacity: 0.6; align-items: center; justify-items: center; }
-        .client-logo { max-height: 35px; filter: grayscale(100%); transition: 0.3s; }
-        .client-logo:hover { filter: grayscale(0%); opacity: 1; }
-        .pillar-card { border-left: 1px solid var(--border-light); padding-left: 2rem; }
-        .pillar-icon { font-size: 2rem; margin-bottom: 1rem; color: var(--text-primary); }
+        /* Logos Cliente (Grayscale to Color) */
+        .client-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 3rem;
+            align-items: center;
+            justify-items: center;
+            opacity: 0.6;
+        }
+        .client-logo {
+            max-height: 35px;
+            filter: grayscale(100%);
+            transition: var(--transition-base);
+            opacity: 0.7;
+        }
+        .client-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        /* Cards de Pilares */
+        .pillar-card {
+            border-left: 1px solid var(--border-light);
+            padding-left: 2rem;
+            transition: transform 0.3s ease;
+        }
+        .pillar-card:hover {
+            transform: translateX(10px);
+            border-left-color: var(--color-black);
+        }
+        .pillar-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        /* Hero Layout */
+        .hero-wrapper {
+            position: relative;
+            overflow: hidden;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Sección Filtro (Dark Mode) */
+        .filter-section {
+            background-color: var(--color-black);
+            color: var(--color-white);
+            padding: 8rem 0;
+        }
+        .filter-list li {
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            color: #d4d4d8;
+            font-size: 1.1rem;
+        }
+        .filter-list i {
+            color: var(--color-white);
+            margin-top: 4px;
+            font-size: 1.5rem;
+        }
     </style>
 </head>
 <body>
 
+    <div id="preloader">
+        <img src="assets/img/logo-kai-animado.gif" alt="Cargando Kai Studio..." class="preloader-gif">
+    </div>
+
     <div id="navbar-container"></div>
 
-    <section class="hero-wrapper" style="padding-top: 10rem; min-height: 80vh;">
+    <section class="hero-wrapper">
         <div class="container">
-            <p class="text-uppercase mb-4">Growth Partner & Estrategia Digital</p>
-            <h1 style="max-width: 20ch;">
+            <p class="text-uppercase mb-4" style="letter-spacing: 0.1em; font-size: 0.8rem;">Growth Partner & Estrategia Digital</p>
+            
+            <h1 style="max-width: 18ch; margin-bottom: 2rem;">
                 No vendemos webs. <br>
-                Construimos sistemas de <span style="text-decoration: underline; text-decoration-thickness: 4px;">rentabilidad</span>.
+                Construimos sistemas de <span style="text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px;">rentabilidad</span>.
             </h1>
-            <p class="mt-2" style="font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 3rem;">
+            
+            <p style="font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 3rem; max-width: 600px; line-height: 1.7;">
                 En Kai Studio nos asociamos con tu visión. Unificamos desarrollo, tráfico y conversión para escalar tu facturación, no solo tus visitas.
             </p>
+
             <div class="flex-center" style="justify-content: flex-start; gap: 1rem;">
-                <a href="https://wa.me/5493476245523" class="btn btn-primary">Iniciar Auditoría <i class="ph ph-chart-line-up"></i></a>
-                <a href="#casos" class="btn btn-secondary">Ver Resultados</a>
+                <a href="https://wa.me/5493476245523" class="btn btn-primary">
+                    Iniciar Auditoría <i class="ph ph-chart-line-up"></i>
+                </a>
+                <a href="#casos" class="btn btn-secondary">
+                    Ver Resultados
+                </a>
             </div>
         </div>
     </section>
 
-    <section style="padding: 2rem 0; border-block: 1px solid var(--border-light);">
+    <section style="padding: 3rem 0; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
         <div class="container">
-            <p class="text-uppercase" style="text-align: center; margin-bottom: 2rem; font-size: 0.75rem; color: #a1a1aa;">Impulsando el crecimiento de</p>
+            <p class="text-uppercase" style="text-align: center; margin-bottom: 2.5rem; font-size: 0.75rem; color: #a1a1aa;">
+                Escalando negocios en Argentina
+            </p>
             <div class="client-grid">
-                <img src="assets/img/Marketing/18.png" alt="Cliente 1" class="client-logo">
-                <img src="assets/img/Marketing/10.png" alt="Cliente 2" class="client-logo">
-                <img src="assets/img/Marketing/12.png" alt="Cliente 3" class="client-logo">
-                <img src="assets/img/apps/6.png" alt="Cliente 4" class="client-logo">
+                <img src="assets/img/Marketing/18.png" alt="Industria 4" class="client-logo">
+                <img src="assets/img/Marketing/10.png" alt="Terraviento" class="client-logo">
+                <img src="assets/img/Marketing/12.png" alt="Savages" class="client-logo">
+                <img src="assets/img/apps/6.png" alt="Selecta" class="client-logo">
+                <img src="assets/img/apps/1.png" alt="Cofco" class="client-logo">
             </div>
         </div>
     </section>
@@ -59,47 +153,59 @@
     <section id="metodo">
         <div class="container">
             <div class="grid-2 mb-4">
-                <h2>El Ecosistema Kai.</h2>
-                <p>Infraestructura completa diseñada para vender.</p>
+                <h2 style="max-width: 15ch;">Infraestructura diseñada para vender.</h2>
+                <p style="align-self: end;">Dejamos de lado las "soluciones parche". Implementamos una arquitectura completa de 3 pilares.</p>
             </div>
-            <div class="grid-3" style="margin-top: 4rem;">
+
+            <div class="grid-3" style="margin-top: 5rem;">
                 <div class="pillar-card">
                     <i class="ph ph-users-three pillar-icon"></i>
                     <h3>1. Tráfico Cualificado</h3>
-                    <p class="text-sm mt-2">Gestionamos Meta & Google Ads para poner tu oferta frente a los ojos correctos.</p>
+                    <p class="text-sm mt-2">No sirve de nada tener la mejor tienda si nadie entra. Gestionamos Meta Ads y Google Ads para poner tu oferta frente a los ojos correctos.</p>
                 </div>
+                
                 <div class="pillar-card">
                     <i class="ph ph-lightning pillar-icon"></i>
                     <h3>2. Conversión Web</h3>
-                    <p class="text-sm mt-2">Landing Pages de alta velocidad. Cada píxel diseñado para que el usuario compre.</p>
+                    <p class="text-sm mt-2">Desarrollo de Landing Pages de alta velocidad (Lighthouse 100) y E-commerce optimizados. Cada píxel está diseñado para que el usuario compre.</p>
                 </div>
+
                 <div class="pillar-card">
                     <i class="ph ph-chart-bar pillar-icon"></i>
                     <h3>3. Medición y Escala</h3>
-                    <p class="text-sm mt-2">Tracking avanzado (GA4 + Pixel) para saber el retorno de cada peso invertido.</p>
+                    <p class="text-sm mt-2">Lo que no se mide, no se mejora. Tracking avanzado (GA4 + Pixel) para saber exactamente cuánto retorna cada peso invertido.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section-dark">
+    <section class="filter-section">
         <div class="container">
-            <div class="grid-2" style="align-items: center;">
+            <div class="grid-2" style="align-items: center; gap: 4rem;">
                 <div>
-                    <h2 style="color: white;">No somos para todos.</h2>
-                    <p style="color: #a1a1aa; margin-bottom: 2rem;">
-                        Kai Studio no es una agencia genérica. Somos Growth Partners. Para garantizar resultados, filtramos rigurosamente a nuestros socios.
+                    <h2 style="color: white; margin-bottom: 2rem;">No somos para todos.</h2>
+                    <p style="color: #a1a1aa; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Kai Studio no es una agencia de "hazme un post". Somos Growth Partners. Para garantizar resultados, filtramos rigurosamente a nuestros socios.
                     </p>
-                    <a href="/contacto.html" class="btn" style="background: white; color: black; border: none;">
+                    <a href="contacto.html" class="btn" style="background: white; color: black; border: none;">
                         Ver si califico <i class="ph ph-check"></i>
                     </a>
                 </div>
-                <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 8px;">
-                    <h3 style="color: white; font-size: 1.1rem; margin-bottom: 1.5rem;">Buscamos empresas que:</h3>
-                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; color: #d4d4d8;">
-                        <li style="display: flex; gap: 0.5rem;"><i class="ph ph-check-circle" style="color: white;"></i> Tengan un producto/servicio validado.</li>
-                        <li style="display: flex; gap: 0.5rem;"><i class="ph ph-check-circle" style="color: white;"></i> Entiendan el marketing como inversión.</li>
-                        <li style="display: flex; gap: 0.5rem;"><i class="ph ph-check-circle" style="color: white;"></i> Estén dispuestos a escalar.</li>
+                <div style="background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                    <h3 style="color: white; font-size: 1.25rem; margin-bottom: 2rem;">Buscamos empresas que:</h3>
+                    <ul class="filter-list">
+                        <li>
+                            <i class="ph ph-check-circle"></i>
+                            <span>Tengan un producto o servicio validado en el mercado.</span>
+                        </li>
+                        <li>
+                            <i class="ph ph-check-circle"></i>
+                            <span>Entiendan que el marketing es una inversión, no un gasto.</span>
+                        </li>
+                        <li>
+                            <i class="ph ph-check-circle"></i>
+                            <span>Estén dispuestas a escalar operaciones cuando aumente la demanda.</span>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -109,36 +215,57 @@
     <section id="casos">
         <div class="container">
             <div class="grid-2" style="align-items: center;">
-                <div>
-                    <p class="text-uppercase" style="color: #a1a1aa;">Caso de Estudio</p>
-                    <h2>Savages: Récord de Ventas.</h2>
-                    <p class="mb-4">Rediseño UX y Estrategia de Ads. Resultado: +200% Conversión móvil.</p>
-                    <a href="#" class="btn btn-primary">Ver Caso Completo</a>
+                <div style="order: 2;"> <p class="text-uppercase" style="color: var(--text-secondary);">Caso de Estudio Destacado</p>
+                    <h2 style="margin-top: 1rem;">Savages: De marca local a referente nacional.</h2>
+                    <p class="mb-4">
+                        Rediseño total de identidad y estrategia de E-commerce. Resultado: Aumento del 200% en conversión móvil y récord de ventas en lanzamiento.
+                    </p>
+                    <div style="display: flex; gap: 2rem; margin-bottom: 2rem;">
+                        <div>
+                            <span style="font-weight: 800; font-size: 1.5rem; display: block;">+200%</span>
+                            <span class="text-sm text-uppercase">Conversión</span>
+                        </div>
+                        <div>
+                            <span style="font-weight: 800; font-size: 1.5rem; display: block;">4.5x</span>
+                            <span class="text-sm text-uppercase">ROAS</span>
+                        </div>
+                    </div>
+                    <a href="cases/savages.html" class="btn btn-primary">
+                        Ver Caso Completo <i class="ph ph-arrow-right"></i>
+                    </a>
                 </div>
-                <div style="background: #eee; border-radius: 8px; overflow: hidden;">
-                    <img src="assets/img/webs/savages.png" alt="Caso Savages" style="width: 100%;">
+                
+                <div style="order: 1; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
+                    <img src="assets/img/webs/savages.png" alt="Caso Savages" style="width: 100%; height: auto; object-fit: cover;">
                 </div>
             </div>
         </div>
     </section>
 
-    <section style="background: var(--bg-surface);">
-        <div class="container" style="text-align: center;">
-            <i class="ph ph-quotes" style="font-size: 3rem; color: #ccc;"></i>
-            <h3 style="font-size: 1.5rem; max-width: 800px; margin: 2rem auto; font-weight: 500;">
-                "Kai Studio no solo hizo nuestra web, reestructuró cómo vendemos. Entendieron el negocio mejor que nosotros."
-            </h3>
-            <div class="flex-center" style="gap: 1rem;">
-                <div style="font-weight: 700;">Limbo42 Agency</div>
-                <span style="color: #666;">• Partner Estratégico</span>
+    <section style="background-color: var(--bg-surface);">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <i class="ph ph-quotes" style="font-size: 3rem; color: var(--border-light); margin-bottom: 2rem;"></i>
+                <h3 style="font-size: 1.5rem; font-weight: 500; line-height: 1.6; margin-bottom: 2rem;">
+                    "Kai Studio no solo hizo nuestra web, reestructuró cómo vendemos. Entendieron nuestro negocio mejor que nosotros mismos y los números de este trimestre lo demuestran."
+                </h3>
+                <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+                    <div style="width: 50px; height: 50px; background: #ddd; border-radius: 50%; overflow: hidden;">
+                        <img src="assets/img/webs/Limbo42.png" alt="Limbo42" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="text-align: left;">
+                        <span style="display: block; font-weight: 700;">Limbo42 Agency</span>
+                        <span class="text-sm" style="color: var(--text-secondary);">Partner Estratégico</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <div id="footer-container"></div>
-    
+
     <script src="js/tracking.js"></script>
     <script src="js/main.js"></script>
     <script src="js/loader.js"></script>
-</body>
+    <script src="js/preloader.js"></script> </body>
 </html>

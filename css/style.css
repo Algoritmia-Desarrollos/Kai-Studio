@@ -209,3 +209,29 @@ section { padding: var(--section-spacing) 0; }
     50% { transform: scale(1.05); opacity: 1; }
     100% { transform: scale(0.95); opacity: 0.5; }
 }
+/* =========================================
+   RESPONSIVE MENU FIX (AGREGAR AL FINAL DE STYLE.CSS)
+   ========================================= */
+
+/* 1. ESCRITORIO: Ocultar botón hamburguesa, mostrar enlaces */
+.mobile-toggle {
+    display: none; /* Por defecto no se ve */
+}
+
+/* 2. MÓVIL (Menos de 768px): Ocultar enlaces texto, mostrar hamburguesa */
+@media (max-width: 768px) {
+    /* Ocultar la lista de enlaces de texto del navbar */
+    .navbar .nav-links {
+        display: none; 
+    }
+    
+    /* Mostrar el botón hamburguesa */
+    .mobile-toggle {
+        display: block;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--text-primary);
+    }
+}
