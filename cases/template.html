@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caso de Estudio: [CLIENTE] | Kai Studio</title>
+    <meta name="robots" content="noindex, follow"> <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        /* Ajustes específicos para lectura inmersiva */
+        .case-hero {
+            padding: 8rem 0 4rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .metric-card {
+            background: var(--bg-surface);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .metric-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .content-block {
+            padding: 4rem 0;
+            max-width: 800px; /* Ancho de lectura tipo Medium.com */
+            margin: 0 auto;
+        }
+        .visual-break {
+            margin: 3rem 0;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar" style="position: absolute; background: transparent; backdrop-filter: none; border: none;">
+        <div class="container">
+            <a href="../index.html" class="btn btn-secondary" style="background: white;">
+                <i class="ph ph-arrow-left"></i> Volver al Hub
+            </a>
+        </div>
+    </nav>
+
+    <section class="case-hero">
+        <div class="container">
+            <p class="text-uppercase mb-4" style="color: var(--text-secondary);">Growth Case #01</p>
+            <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem;">
+                [NOMBRE CLIENTE]: De ventas locales a facturación nacional récord.
+            </h1>
+            <p style="font-size: 1.25rem; max-width: 700px; color: var(--text-secondary);">
+                Cómo una reestructuración de UX y estrategia de Meta Ads redujo el costo de adquisición (CPA) a la mitad en 30 días.
+            </p>
+
+            <div class="grid-3 mt-2" style="margin-top: 4rem;">
+                <div class="metric-card">
+                    <span class="metric-value">+200%</span>
+                    <span class="metric-label">Tasa de Conversión</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">4.5x</span>
+                    <span class="metric-label">ROAS (Retorno)</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">-40%</span>
+                    <span class="metric-label">Costo por Lead</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            
+            <div class="content-block">
+                <h2 style="font-size: 2rem;">El Problema: Tráfico sin Ventas</h2>
+                <p class="mt-2">
+                    [CLIENTE] tenía un producto excelente y una comunidad fiel en Instagram, pero su web era un cuello de botella. 
+                    El checkout era lento, no estaba optimizado para móviles y el píxel de Facebook no estaba midiendo bien.
+                </p>
+                <p class="mt-2">
+                    Básicamente: <strong>Estaban dejando dinero sobre la mesa cada día.</strong>
+                </p>
+            </div>
+
+            <div class="visual-break">
+                <img src="../assets/img/webs/savages.png" alt="Antes y Después" style="width: 100%;">
+            </div>
+
+            <div class="content-block">
+                <h2 style="font-size: 2rem;">La Intervención Kai</h2>
+                <ul style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; list-style: none;">
+                    <li style="display: flex; gap: 1rem; align-items: start;">
+                        <i class="ph ph-check-circle" style="font-size: 1.5rem; color: var(--text-primary);"></i>
+                        <div>
+                            <strong>Infraestructura Veloz:</strong> Migramos su catálogo a una landing estática optimizada (Lighthouse 95+).
+                        </div>
+                    </li>
+                    <li style="display: flex; gap: 1rem; align-items: start;">
+                        <i class="ph ph-check-circle" style="font-size: 1.5rem; color: var(--text-primary);"></i>
+                        <div>
+                            <strong>Tracking Militar:</strong> Implementamos API de Conversiones de Meta para recuperar el 30% de data perdida por iOS14.
+                        </div>
+                    </li>
+                    <li style="display: flex; gap: 1rem; align-items: start;">
+                        <i class="ph ph-check-circle" style="font-size: 1.5rem; color: var(--text-primary);"></i>
+                        <div>
+                            <strong>Ads Creativos:</strong> Cambiamos el enfoque de "Vender producto" a "Vender estilo de vida" en los anuncios.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section-dark" style="text-align: center;">
+        <div class="container">
+            <h2 style="color: white;">¿Tu negocio está listo para estos números?</h2>
+            <p style="color: #a1a1aa; margin-bottom: 2rem;">
+                No prometemos magia. Prometemos ingeniería de ventas.
+            </p>
+            <a href="https://wa.me/5493476245523" class="btn" style="background: white; color: black;">
+                Auditar mi Negocio <i class="ph ph-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <script src="../js/tracking.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

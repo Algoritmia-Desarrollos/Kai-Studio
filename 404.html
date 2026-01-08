@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Ruta No Encontrada - Kai Studio</title>
+    <meta name="robots" content="noindex, follow">
+    
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        .error-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: var(--bg-body);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .huge-number {
+            font-size: clamp(8rem, 20vw, 15rem);
+            font-weight: 800;
+            line-height: 0.8;
+            color: var(--bg-surface); /* Gris muy suave para que sea sutil */
+            user-select: none;
+            position: absolute;
+            z-index: 0;
+        }
+
+        .error-content {
+            position: relative;
+            z-index: 1;
+            max-width: 500px;
+            padding: 0 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="error-container">
+        <div class="huge-number">404</div>
+
+        <div class="error-content">
+            <h1 style="font-size: 2rem; margin-bottom: 1rem;">Te has desviado del camino rentable.</h1>
+            <p class="mb-4">
+                Esta ruta no existe en <strong>kaistudio.net</strong>. 
+                Puede que el enlace esté roto o que hayamos eliminado contenido obsoleto que ya no generaba resultados.
+            </p>
+            
+            <a href="/" class="btn btn-primary">
+                <i class="ph ph-arrow-u-up-left"></i> Volver al Método
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
