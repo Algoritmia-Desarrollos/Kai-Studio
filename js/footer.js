@@ -36,10 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
                                 </li>
                                 <li>
                                     <a href="https://wa.me/5493476245523">
-                                        <i class="ph ph-whatsapp"></i> +54 9 3476 24-5523
+                                        <i class="ph ph-whatsapp-logo"></i> +54 9 3476 24-5523
                                     </a>
                                 </li>
-                                <li class="text-sm text-secondary mt-4">
+                                <li class="text-sm text-secondary">
                                     <i class="ph ph-map-pin"></i> Rosario, Santa Fe, Argentina
                                 </li>
                             </ul>
@@ -47,10 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
 
                     <div class="footer-bottom mt-8" style="padding-top: 2rem; border-top: 1px solid var(--border-light); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-                        <p class="text-sm text-secondary">© ${year} Kai Studio. Todos los derechos reservados.</p>
+                        <p class="text-sm text-secondary">© ${year} Todos los derechos reservados.</p>
                         <div class="social-links flex-center" style="gap: 1rem;">
-                            <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo" style="font-size: 1.25rem;"></i></a>
-                            <a href="#" aria-label="LinkedIn"><i class="ph ph-linkedin-logo" style="font-size: 1.25rem;"></i></a>
+                            <a href="#" aria-label="Instagram" style="color: var(--text-primary); text-decoration: none;"><i class="ph ph-instagram-logo" style="font-size: 1.25rem;"></i></a>
+                            <a href="#" aria-label="LinkedIn" style="color: var(--text-primary); text-decoration: none;"><i class="ph ph-linkedin-logo" style="font-size: 1.25rem;"></i></a>
                         </div>
                     </div>
                 </div>

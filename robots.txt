@@ -1,7 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /css/
-Disallow: /js/
-Disallow: /components/
 
 Sitemap: https://kaistudio.net/sitemap.xml

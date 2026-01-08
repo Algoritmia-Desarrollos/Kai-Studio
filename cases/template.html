@@ -3,147 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caso de Estudio: [CLIENTE] | Kai Studio</title>
-    <meta name="robots" content="noindex, follow"> <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/variables.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Caso Savages | Kai Studio</title>
+    
+    <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    
     <link rel="stylesheet" href="../css/style.css">
     
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-
-    <style>
-        /* Ajustes específicos para lectura inmersiva */
-        .case-hero {
-            padding: 8rem 0 4rem;
-            border-bottom: 1px solid var(--border-light);
-        }
-        .metric-card {
-            background: var(--bg-surface);
-            padding: 2rem;
-            border-radius: var(--radius-md);
-            text-align: center;
-        }
-        .metric-value {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            line-height: 1;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-        .metric-label {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .content-block {
-            padding: 4rem 0;
-            max-width: 800px; /* Ancho de lectura tipo Medium.com */
-            margin: 0 auto;
-        }
-        .visual-break {
-            margin: 3rem 0;
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-        }
-    </style>
 </head>
 <body>
+    
+    <div id="preloader">
+        <img src="../assets/img/logo-kai-animado.gif" alt="Cargando..." class="preloader-gif">
+    </div>
 
-    <nav class="navbar" style="position: absolute; background: transparent; backdrop-filter: none; border: none;">
-        <div class="container">
-            <a href="../index.html" class="btn btn-secondary" style="background: white;">
-                <i class="ph ph-arrow-left"></i> Volver al Hub
-            </a>
-        </div>
-    </nav>
+    <div id="navbar-container"></div>
+    <script>window.isSubfolder = true;</script>
 
-    <section class="case-hero">
+    <header class="reveal" style="padding-top: 8rem; padding-bottom: 4rem; text-align: center;">
         <div class="container">
-            <p class="text-uppercase mb-4" style="color: var(--text-secondary);">Growth Case #01</p>
-            <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem;">
-                [NOMBRE CLIENTE]: De ventas locales a facturación nacional récord.
-            </h1>
-            <p style="font-size: 1.25rem; max-width: 700px; color: var(--text-secondary);">
-                Cómo una reestructuración de UX y estrategia de Meta Ads redujo el costo de adquisición (CPA) a la mitad en 30 días.
+            <span class="text-uppercase text-secondary mb-2">E-Commerce & Branding</span>
+            <h1 class="text-display mb-4">Savages</h1>
+            <p class="text-lg" style="max-width: 600px; margin: 0 auto;">
+                Rediseño integral de la experiencia de compra para una marca con identidad fuerte.
             </p>
-
-            <div class="grid-3 mt-2" style="margin-top: 4rem;">
-                <div class="metric-card">
-                    <span class="metric-value">+200%</span>
-                    <span class="metric-label">Tasa de Conversión</span>
-                </div>
-                <div class="metric-card">
-                    <span class="metric-value">4.5x</span>
-                    <span class="metric-label">ROAS (Retorno)</span>
-                </div>
-                <div class="metric-card">
-                    <span class="metric-value">-40%</span>
-                    <span class="metric-label">Costo por Lead</span>
-                </div>
-            </div>
         </div>
-    </section>
+    </header>
 
-    <section>
+    <section class="reveal">
         <div class="container">
-            
-            <div class="content-block">
-                <h2 style="font-size: 2rem;">El Problema: Tráfico sin Ventas</h2>
-                <p class="mt-2">
-                    [CLIENTE] tenía un producto excelente y una comunidad fiel en Instagram, pero su web era un cuello de botella. 
-                    El checkout era lento, no estaba optimizado para móviles y el píxel de Facebook no estaba midiendo bien.
-                </p>
-                <p class="mt-2">
-                    Básicamente: <strong>Estaban dejando dinero sobre la mesa cada día.</strong>
-                </p>
+            <div class="case-img-container">
+                <img src="../assets/img/webs/savages.png" alt="Savages Web" style="width: 100%; height: auto;">
             </div>
-
-            <div class="visual-break">
-                <img src="../assets/img/webs/savages.png" alt="Antes y Después" style="width: 100%;">
-            </div>
-
-            <div class="content-block">
-                <h2 style="font-size: 2rem;">La Intervención Kai</h2>
-                <ul style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; list-style: none;">
-                    <li style="display: flex; gap: 1rem; align-items: start;">
-                        <i class="ph ph-check-circle" style="font-size: 1.5rem; color: var(--text-primary);"></i>
-                        <div>
-                            <strong>Infraestructura Veloz:</strong> Migramos su catálogo a una landing estática optimizada (Lighthouse 95+).
-                        </div>
-                    </li>
-                    <li style="display: flex; gap: 1rem; align-items: start;">
-                        <i class="ph ph-check-circle" style="font-size: 1.5rem; color: var(--text-primary);"></i>
-                        <div>
-                            <strong>Tracking Militar:</strong> Implementamos API de Conversiones de Meta para recuperar el 30% de data perdida por iOS14.
-                        </div>
-                    </li>
-                    <li style="display: flex; gap: 1rem; align-items: start;">
-                        <i class="ph ph-check-circle" style="font-size: 1.5rem; color: var(--text-primary);"></i>
-                        <div>
-                            <strong>Ads Creativos:</strong> Cambiamos el enfoque de "Vender producto" a "Vender estilo de vida" en los anuncios.
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
         </div>
     </section>
 
-    <section class="section-dark" style="text-align: center;">
+    <section class="reveal" style="padding: var(--section-spacing) 0;">
         <div class="container">
-            <h2 style="color: white;">¿Tu negocio está listo para estos números?</h2>
-            <p style="color: #a1a1aa; margin-bottom: 2rem;">
-                No prometemos magia. Prometemos ingeniería de ventas.
-            </p>
-            <a href="https://wa.me/5493476245523" class="btn" style="background: white; color: black;">
-                Auditar mi Negocio <i class="ph ph-arrow-right"></i>
-            </a>
+            <div class="grid-2">
+                <div>
+                    <h3 class="text-h3 mb-4">El Desafío</h3>
+                    <p class="mb-4">Savages tenía una identidad visual potente en Instagram, pero su web no reflejaba esa calidad. La conversión móvil era baja debido a tiempos de carga lentos.</p>
+                    
+                    <h3 class="text-h3 mb-4">La Solución</h3>
+                    <ul class="filter-list" style="list-style: none; padding: 0;">
+                        <li class="mb-2"><i class="ph ph-check"></i> Migración a stack moderno.</li>
+                        <li class="mb-2"><i class="ph ph-check"></i> Optimización de imágenes WebP.</li>
+                        <li class="mb-2"><i class="ph ph-check"></i> Checkout simplificado en 2 pasos.</li>
+                    </ul>
+                </div>
+                <div>
+                    <div style="background: var(--bg-surface); padding: 2rem; border-radius: var(--radius-md);">
+                        <h4 class="text-uppercase mb-4">Resultados</h4>
+                        <div class="mb-4">
+                            <span class="text-display" style="font-size: 2.5rem;">+200%</span>
+                            <p class="text-sm">Conversión Móvil</p>
+                        </div>
+                        <div>
+                            <span class="text-display" style="font-size: 2.5rem;">0.8s</span>
+                            <p class="text-sm">Tiempo de Carga</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+    
+    <section style="padding: 4rem 0; border-top: 1px solid var(--border-light);">
+        <div class="container flex-center" style="justify-content: space-between;">
+            <a href="../casos.html" class="btn btn-secondary"><i class="ph ph-arrow-left"></i> Volver</a>
+            <a href="limbo42.html" class="btn btn-primary">Siguiente Caso <i class="ph ph-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
 
     <script src="../js/tracking.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/footer.js"></script>
     <script src="../js/main.js"></script>
+    <script src="../js/preloader.js"></script>
+    
+    <script>
+        // Este script arregla los enlaces del menú cuando estás en una subcarpeta
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const links = document.querySelectorAll('.navbar a, .mobile-menu a, footer a');
+                links.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('../')) {
+                        link.setAttribute('href', '../' + href);
+                    }
+                });
+            }, 100); // Pequeño delay para asegurar que el navbar.js haya inyectado el HTML
+        });
+    </script>
 </body>
 </html>
