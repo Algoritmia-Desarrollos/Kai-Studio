@@ -1,0 +1,37 @@
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.reveal {
+    opacity: 0;
+    transition: var(--transition-smooth);
+}
+
+.reveal.active {
+    opacity: 1;
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.fade-in {
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+.hover-scale {
+    transition: var(--transition-smooth);
+}
+
+.hover-scale:hover {
+    transform: scale(1.02);
+}
