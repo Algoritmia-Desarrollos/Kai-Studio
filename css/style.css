@@ -1,8 +1,6 @@
 /* =========================================
-   KAI STUDIO | CORE STYLES
-   Minimalism - High Contrast - Performance
+   KAI STUDIO | CORE STYLES v2.0 (FIXED)
    ========================================= */
-
 @import 'variables.css';
 @import 'reset.css';
 
@@ -18,41 +16,29 @@ body {
 .container {
     width: 100%;
     max-width: var(--container-width);
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
 /* --- TYPOGRAPHY --- */
 h1, h2, h3 {
     font-weight: 700;
-    letter-spacing: -0.03em; /* Tight tracking for modern look */
+    letter-spacing: -0.03em;
     line-height: 1.1;
     color: var(--text-primary);
 }
-
-h1 {
-    font-size: var(--text-display);
-    margin-bottom: 1.5rem;
-}
-
-h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    margin-bottom: 1rem;
-}
-
+h1 { font-size: var(--text-display); margin-bottom: 1.5rem; }
+h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; }
 p {
     color: var(--text-secondary);
     font-size: var(--text-lg);
     line-height: 1.6;
-    max-width: 65ch; /* Longitud de lectura óptima */
+    max-width: 65ch;
 }
-
 .text-sm { font-size: var(--text-sm); }
 .text-uppercase { text-transform: uppercase; letter-spacing: 0.05em; font-size: var(--text-xs); font-weight: 600; }
 
-/* --- BUTTONS (THE "HOOK") --- */
+/* --- BUTTONS --- */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -61,140 +47,89 @@ p {
     font-weight: 600;
     border-radius: var(--radius-full);
     transition: var(--transition-base);
-    font-size: var(--text-base);
     gap: 0.5rem;
     cursor: pointer;
+    text-decoration: none;
     border: 1px solid transparent;
 }
+.btn-primary { background: var(--color-black); color: var(--color-white); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); background: #27272a; }
+.btn-secondary { background: transparent; color: var(--text-primary); border-color: var(--border-light); }
+.btn-secondary:hover { border-color: var(--color-black); background: var(--bg-surface); }
 
-.btn-primary {
-    background-color: var(--color-black);
-    color: var(--color-white);
-}
-
-.btn-primary:hover {
-    background-color: #27272a; /* Zinc 800 */
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--text-primary);
-    border-color: var(--border-light);
-}
-
-.btn-secondary:hover {
-    border-color: var(--color-black);
-    background-color: var(--bg-surface);
-}
-
-/* --- SECTIONS --- */
-section {
-    padding: var(--section-spacing) 0;
-}
-
-.section-dark {
-    background-color: var(--bg-dark);
-    color: var(--text-inverse);
-}
-.section-dark p { color: #a1a1aa; } /* Light Gray for text on dark bg */
-
-/* --- CARD COMPONENT (MINIMAL) --- */
-.card {
-    background-color: var(--color-white);
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius-md);
-    padding: 2rem;
-    transition: var(--transition-base);
-}
-
-.card:hover {
-    border-color: var(--border-focus);
-    box-shadow: var(--shadow-hover);
-}
-
-/* --- NAVIGATION (STICKY & BLUR) --- */
+/* --- NAVBAR BASE --- */
 .navbar {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top: 0; left: 0; width: 100%;
     height: var(--header-height);
-    background-color: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-light);
     z-index: 1000;
-    display: flex;
-    align-items: center;
+    display: flex; align-items: center;
 }
-
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
 }
-
 .logo {
-    font-weight: 800;
-    font-size: 1.5rem;
-    letter-spacing: -0.04em;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    font-weight: 800; font-size: 1.5rem; letter-spacing: -0.04em;
+    display: flex; align-items: center; gap: 0.5rem;
+    text-decoration: none; color: var(--text-primary);
 }
-
 .logo span {
-    background-color: var(--color-black);
-    color: var(--color-white);
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: var(--color-black); color: var(--color-white);
+    width: 32px; height: 32px; display: flex;
+    align-items: center; justify-content: center;
     border-radius: 4px;
-    font-size: 18px;
-}
-
-.nav-links {
-    display: flex;
-    gap: 2rem;
-}
-
-@media (max-width: 768px) {
-    .nav-links { display: none; } /* Mobile Menu Logic in JS */
-    h1 { font-size: 2.5rem; }
 }
 
 /* --- UTILITIES --- */
 .grid-2 { display: grid; grid-template-columns: 1fr; gap: 2rem; }
 .grid-3 { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-
 @media (min-width: 768px) {
     .grid-2 { grid-template-columns: 1fr 1fr; }
     .grid-3 { grid-template-columns: repeat(3, 1fr); }
 }
-
 .flex-center { display: flex; align-items: center; justify-content: center; }
-.mt-2 { margin-top: 1rem; }
-.mb-4 { margin-bottom: 2rem; }
+.section-dark { background: var(--color-black); color: var(--color-white); }
+.section-dark p { color: #a1a1aa; }
+section { padding: var(--section-spacing) 0; }
 
+/* =========================================
+   🛡️ RESPONSIVE MENU LOGIC (CRÍTICO)
+   ========================================= */
 
-/* --- ANIMATION UTILITIES (Añadir al final de style.css) --- */
-.reveal-element {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
-    will-change: opacity, transform;
+/* 1. ESTADO ESCRITORIO (Desktop Default) */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
 }
-
-.reveal-element.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: color 0.2s;
 }
+.nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
 
+/* El botón móvil está OCULTO por defecto */
+.mobile-toggle { display: none !important; } 
+
+/* 2. ESTADO MÓVIL (Tablets y Celulares) */
 @media (max-width: 768px) {
-    .nav-links { display: none; } /* Asegura que el menú desktop se oculte */
+    /* Ocultamos los enlaces de texto */
+    .nav-links { display: none; }
+    
+    /* Mostramos el botón hamburguesa */
+    .mobile-toggle { 
+        display: block !important; 
+        background: transparent;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 0.5rem;
+    }
 }
