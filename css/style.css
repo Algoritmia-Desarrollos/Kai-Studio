@@ -1,5 +1,5 @@
 /* =========================================
-   KAI STUDIO | CORE STYLES V50.0
+   KAI STUDIO | CORE STYLES V50.0 (APPLE UPDATE)
    ========================================= */
 @import 'reset.css';
 @import 'variables.css';
@@ -12,6 +12,8 @@ body {
     font-family: var(--font-main);
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -44,23 +46,119 @@ h1, h2, h3 {
     transition: all 0.3s var(--transition-smooth); gap: 0.5rem;
     text-decoration: none; border: 1px solid transparent; cursor: pointer;
 }
-.btn-primary { background: var(--color-black); color: var(--color-white); }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); background: #333; }
+.btn-primary { 
+    background: var(--color-black); 
+    color: var(--color-white); 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.btn-primary:hover { 
+    transform: translateY(-2px) scale(1.02); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25); 
+    background: #000; 
+}
 .btn-secondary { background: transparent; color: var(--text-primary); border-color: var(--border-light); }
 .btn-secondary:hover { border-color: var(--color-black); background: var(--bg-surface); }
 .btn-inverse { background: var(--color-white); color: var(--color-black); } /* Botón blanco para fondo oscuro */
 
-/* --- NAVBAR --- */
-.navbar {
-    position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height);
-    background: var(--bg-glass); backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border-light); z-index: 1000; display: flex; align-items: center;
+/* --- NAVBAR (Liquid Glass Redesign) --- */
+.navbar-fixed-wrapper {
+    position: fixed;
+    top: 2rem;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    pointer-events: none;
 }
-.nav-links { display: flex; gap: 2rem; align-items: center; }
-.nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 500; transition: color 0.2s; }
-.nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
-.logo { font-weight: 800; font-size: 1.5rem; display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--text-primary); }
-.logo span { background: var(--color-black); color: var(--color-white); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 4px; }
+
+.navbar {
+    position: relative;
+    width: auto;
+    min-width: 750px; /* Widened from 600px */
+    background: transparent;
+    border: none;
+    padding: 0.75rem 3rem; /* Increased padding */
+    pointer-events: auto;
+    
+    /* Liquid Glass Base */
+    display: flex;
+    font-weight: 600;
+    overflow: hidden;
+    border-radius: 2rem;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
+}
+
+.liquidGlass-wrapper {
+  position: relative;
+  display: flex;
+  font-weight: 600;
+  overflow: hidden;
+}
+
+.liquidGlass-effect {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  backdrop-filter: blur(5px);
+  filter: url(#glass-distortion);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.liquidGlass-tint {
+  z-index: 1;
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6);
+  opacity: 0.8;
+}
+
+.liquidGlass-shine {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  box-shadow: inset 2px 2px 1px 0 rgba(255, 255, 255, 0.5),
+    inset -1px -1px 1px 1px rgba(255, 255, 255, 0.5);
+  border-radius: 2rem;
+}
+
+.liquidGlass-content {
+  z-index: 3;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.nav-links { display: flex; gap: 0.5rem; align-items: center; list-style: none; }
+.nav-links a { 
+    text-decoration: none; 
+    color: var(--text-primary); 
+    font-weight: 500; 
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius-full);
+    transition: all 0.3s var(--transition-smooth);
+    position: relative;
+}
+.nav-links a:hover { 
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--color-black);
+    transform: scale(1.02);
+}
+
+.logo { font-weight: 800; font-size: 1.5rem; display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--color-black); }
+.logo span { background: var(--color-black); color: var(--color-white); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+
+@media (max-width: 768px) {
+    .navbar-fixed-wrapper { top: 1rem; }
+    .navbar { min-width: 90%; padding: 0.5rem 1rem; }
+    .nav-links { display: none; }
+}
 
 /* --- SECCIONES ESPECÍFICAS (Extraídas del HTML) --- */
 
@@ -75,16 +173,48 @@ h1, h2, h3 {
 /* Clients Grid */
 .section-clients { padding: 3rem 0; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
 .client-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 3rem; align-items: center; justify-items: center; opacity: 0.6;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 4rem; align-items: center; justify-items: center; opacity: 0.8;
 }
-.client-logo { max-height: 35px; filter: grayscale(100%); transition: opacity 0.3s; opacity: 0.7; }
-.client-logo:hover { filter: grayscale(0%); opacity: 1; }
+.client-logo { max-height: 40px; filter: grayscale(100%); transition: all 0.4s var(--transition-smooth); opacity: 0.6; }
+.client-logo:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
 
 /* Pillars / Services */
-.pillar-card { border-left: 1px solid var(--border-light); padding-left: 2rem; transition: transform 0.3s ease; }
-.pillar-card:hover { transform: translateX(10px); border-left-color: var(--color-black); }
-.pillar-icon { font-size: 2rem; margin-bottom: 1rem; color: var(--text-primary); }
+.section-method {
+    padding: var(--section-spacing) 0;
+}
+
+.pillar-card { 
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: var(--radius-md);
+    padding: 2.5rem;
+    transition: all 0.4s var(--transition-smooth);
+    box-shadow: var(--shadow-sm);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.pillar-card:hover { 
+    transform: translateY(-8px); 
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(0,0,0,0.15);
+}
+.pillar-icon { 
+    font-size: 2.5rem; 
+    margin-bottom: 1.5rem; 
+    color: var(--color-black);
+    background: var(--bg-surface);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+}
 
 /* Filter Section (Dark) */
 .filter-section { background-color: var(--bg-dark); color: var(--color-white); padding: var(--section-spacing) 0; }
@@ -140,16 +270,26 @@ h1, h2, h3 {
 .nav-content { display: flex; justify-content: space-between; align-items: center; width: 100%; }
 .nav-actions { display: flex; align-items: center; gap: 1rem; }
 
-/* Mobile Menu */
+/* Mobile Menu (Liquid Glass) */
 .mobile-menu {
-    position: fixed; top: var(--header-height); left: 0; width: 100%;
-    background: var(--bg-body); padding: 2rem;
-    border-bottom: 1px solid var(--border-light);
-    transform: translateY(-150%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: fixed; top: 5.5rem; left: 50%; transform: translateX(-50%) translateY(-150%);
+    width: 90%; max-width: 400px;
+    background: transparent;
+    padding: 2rem;
+    border-radius: 2rem;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 900; display: flex; flex-direction: column; gap: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
-.mobile-menu.active { transform: translateY(0); box-shadow: var(--shadow-md); }
-.mobile-link { font-size: 1.25rem; font-weight: 600; text-decoration: none; color: var(--text-primary); }
+.mobile-menu.active { transform: translateX(-50%) translateY(0); }
+.mobile-link { font-size: 1.25rem; font-weight: 600; text-decoration: none; color: var(--color-black); z-index: 5; position: relative; }
+
+/* Make mobile menu whiter */
+.mobile-menu .liquidGlass-tint {
+    background: rgba(255, 255, 255, 0.9);
+    opacity: 1;
+}
 
 .hamburger { background: none; border: none; cursor: pointer; display: none; padding: 0.5rem; }
 
