@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Kai Studio | Growth Partner & Estrategia Digital</title>
     <meta name="description" content="Socio estratégico de crecimiento para negocios que buscan escalar. Transformamos visitas en facturación mediante tráfico, conversión y retención.">
-    
+    <link rel="canonical" href="https://kaistudio.net/">
+
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
@@ -13,33 +15,38 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <style>
-        /* Logos Cliente en Escala de Grises */
+        /* Logos Cliente (Grayscale to Color) */
         .client-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             gap: 3rem;
             align-items: center;
             justify-items: center;
             opacity: 0.6;
         }
         .client-logo {
-            max-height: 40px;
+            max-height: 35px;
             filter: grayscale(100%);
             transition: var(--transition-base);
+            opacity: 0.7;
         }
         .client-logo:hover {
             filter: grayscale(0%);
             opacity: 1;
         }
         
-        /* Grid de Pilares con Borde Sutil */
+        /* Cards de Pilares */
         .pillar-card {
             border-left: 1px solid var(--border-light);
             padding-left: 2rem;
+            transition: transform 0.3s ease;
+        }
+        .pillar-card:hover {
+            transform: translateX(10px);
+            border-left-color: var(--color-black);
         }
         .pillar-icon {
             font-size: 2rem;
@@ -47,45 +54,48 @@
             color: var(--text-primary);
         }
 
-        /* Hero Video Background (Opcional) */
+        /* Hero */
         .hero-wrapper {
             position: relative;
             overflow: hidden;
+            min-height: 85vh; /* Ocupa casi toda la pantalla */
+            display: flex;
+            align-items: center;
+        }
+
+        /* Sección Filtro (Dark) */
+        .filter-section {
+            background-color: var(--color-black);
+            color: var(--color-white);
+            padding: 8rem 0;
+        }
+        .filter-list li {
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            color: #d4d4d8; /* Zinc 300 */
+        }
+        .filter-list i {
+            color: var(--color-white);
+            margin-top: 4px;
         }
     </style>
-
-
-<script src="js/tracking.js"></script>
-<script src="js/main.js"></script>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo">
-                <span>K</span> Kai Studio
-            </a>
-            
-            <div class="nav-links">
-                <a href="#metodo" class="btn btn-secondary">El Método</a>
-                <a href="#casos" class="btn btn-secondary">Casos de Éxito</a>
-                <a href="https://wa.me/5493476245523" class="btn btn-primary">
-                    Hablemos <i class="ph ph-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-    </nav>
+    <div id="navbar-container"></div>
 
-    <section class="hero-wrapper" style="padding-top: 10rem; padding-bottom: 6rem;">
+    <section class="hero-wrapper">
         <div class="container">
-            <p class="text-uppercase mb-4">Growth Partner & Estrategia Digital</p>
+            <p class="text-uppercase mb-4" style="letter-spacing: 0.1em; font-size: 0.8rem;">Growth Partner & Estrategia Digital</p>
             
-            <h1 style="max-width: 20ch;">
+            <h1 style="max-width: 18ch; margin-bottom: 2rem;">
                 No vendemos webs. <br>
-                Construimos sistemas de <span style="text-decoration: underline; text-decoration-thickness: 4px;">rentabilidad</span>.
+                Construimos sistemas de <span style="text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px;">rentabilidad</span>.
             </h1>
             
-            <p class="mt-2" style="font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 3rem;">
+            <p style="font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 3rem; max-width: 600px; line-height: 1.7;">
                 En Kai Studio nos asociamos con tu visión. Unificamos desarrollo, tráfico y conversión para escalar tu facturación, no solo tus visitas.
             </p>
 
@@ -100,10 +110,10 @@
         </div>
     </section>
 
-    <section style="padding: 2rem 0; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+    <section style="padding: 3rem 0; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
         <div class="container">
-            <p class="text-uppercase" style="text-align: center; margin-bottom: 2rem; font-size: 0.75rem; color: #a1a1aa;">
-                Impulsando el crecimiento de
+            <p class="text-uppercase" style="text-align: center; margin-bottom: 2.5rem; font-size: 0.75rem; color: #a1a1aa;">
+                Escalando negocios en Argentina
             </p>
             <div class="client-grid">
                 <img src="assets/img/Marketing/18.png" alt="Industria 4" class="client-logo">
@@ -118,11 +128,11 @@
     <section id="metodo">
         <div class="container">
             <div class="grid-2 mb-4">
-                <h2>El Ecosistema Kai.</h2>
-                <p>Dejamos de lado las "soluciones parche". Implementamos una infraestructura completa diseñada para vender.</p>
+                <h2 style="max-width: 15ch;">Infraestructura diseñada para vender.</h2>
+                <p style="align-self: end;">Dejamos de lado las "soluciones parche". Implementamos una arquitectura completa de 3 pilares.</p>
             </div>
 
-            <div class="grid-3" style="margin-top: 4rem;">
+            <div class="grid-3" style="margin-top: 5rem;">
                 <div class="pillar-card">
                     <i class="ph ph-users-three pillar-icon"></i>
                     <h3>1. Tráfico Cualificado</h3>
@@ -132,7 +142,7 @@
                 <div class="pillar-card">
                     <i class="ph ph-lightning pillar-icon"></i>
                     <h3>2. Conversión Web</h3>
-                    <p class="text-sm mt-2">Desarrollo de Landing Pages de alta velocidad y E-commerce optimizados. Cada píxel está diseñado para que el usuario compre.</p>
+                    <p class="text-sm mt-2">Desarrollo de Landing Pages de alta velocidad (Lighthouse 100) y E-commerce optimizados. Cada píxel está diseñado para que el usuario compre.</p>
                 </div>
 
                 <div class="pillar-card">
@@ -144,44 +154,92 @@
         </div>
     </section>
 
-    <section id="casos" class="section-dark">
+    <section class="filter-section">
         <div class="container">
-            <div class="grid-2" style="align-items: center;">
+            <div class="grid-2" style="align-items: center; gap: 4rem;">
                 <div>
-                    <p class="text-uppercase" style="color: #a1a1aa;">Caso de Estudio Destacado</p>
-                    <h2 style="color: white; margin-top: 1rem;">Savages: De marca local a referente nacional.</h2>
-                    <p style="color: #d4d4d8; margin-bottom: 2rem;">
-                        Rediseño total de identidad y estrategia de E-commerce. Resultado: Aumento del 200% en conversión móvil y récord de ventas en lanzamiento.
+                    <h2 style="color: white; margin-bottom: 2rem;">No somos para todos.</h2>
+                    <p style="color: #a1a1aa; font-size: 1.1rem; margin-bottom: 2rem;">
+                        Kai Studio no es una agencia de "hazme un post". Somos Growth Partners. Para garantizar resultados, filtramos rigurosamente a nuestros socios.
                     </p>
-                    <a href="#" class="btn" style="background: white; color: black;">
-                        Ver Caso Completo <i class="ph ph-arrow-right"></i>
+                    <a href="/contacto.html" class="btn" style="background: white; color: black; border: none;">
+                        Ver si califico <i class="ph ph-check"></i>
                     </a>
                 </div>
-                
-                <div style="background: #27272a; border-radius: 8px; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-                    <img src="assets/img/webs/savages.png" alt="Caso Savages" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                <div style="background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                    <h3 style="color: white; font-size: 1.25rem; margin-bottom: 2rem;">Buscamos empresas que:</h3>
+                    <ul class="filter-list">
+                        <li>
+                            <i class="ph ph-check-circle"></i>
+                            <span>Tengan un producto o servicio validado en el mercado.</span>
+                        </li>
+                        <li>
+                            <i class="ph ph-check-circle"></i>
+                            <span>Entiendan que el marketing es una inversión, no un gasto.</span>
+                        </li>
+                        <li>
+                            <i class="ph ph-check-circle"></i>
+                            <span>Estén dispuestas a escalar operaciones cuando aumente la demanda.</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer style="padding: 4rem 0; border-top: 1px solid var(--border-light);">
-        <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
-            <div>
-                <a href="#" class="logo" style="font-size: 1.2rem;"><span>K</span> Kai Studio</a>
-                <p class="text-sm mt-2" style="max-width: 300px;">
-                    Rosario, Argentina.<br>
-                    Ayudando a negocios a escalar en la economía digital.
-                </p>
-            </div>
-            <div style="display: flex; gap: 2rem;">
-                <a href="mailto:algoritmiadesarrollos@gmail.com" class="text-sm" style="color: var(--text-primary);">Email</a>
-                <a href="https://instagram.com/algoritmia_desarrollos" class="text-sm" style="color: var(--text-primary);">Instagram</a>
-                <a href="https://wa.me/5493476245523" class="text-sm" style="color: var(--text-primary);">WhatsApp</a>
+    <section id="casos">
+        <div class="container">
+            <div class="grid-2" style="align-items: center;">
+                <div style="order: 2;"> <p class="text-uppercase" style="color: var(--text-secondary);">Caso de Estudio Destacado</p>
+                    <h2 style="margin-top: 1rem;">Savages: De marca local a referente nacional.</h2>
+                    <p class="mb-4">
+                        Rediseño total de identidad y estrategia de E-commerce. Resultado: Aumento del 200% en conversión móvil y récord de ventas en lanzamiento.
+                    </p>
+                    <div style="display: flex; gap: 2rem; margin-bottom: 2rem;">
+                        <div>
+                            <span style="font-weight: 800; font-size: 1.5rem; display: block;">+200%</span>
+                            <span class="text-sm text-uppercase">Conversión</span>
+                        </div>
+                        <div>
+                            <span style="font-weight: 800; font-size: 1.5rem; display: block;">4.5x</span>
+                            <span class="text-sm text-uppercase">ROAS</span>
+                        </div>
+                    </div>
+                    <a href="/cases/savages.html" class="btn btn-primary">
+                        Ver Caso Completo <i class="ph ph-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div style="order: 1; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);">
+                    <img src="assets/img/webs/savages.png" alt="Caso Savages" style="width: 100%; height: auto; object-fit: cover;">
+                </div>
             </div>
         </div>
-    </footer>
+    </section>
 
+    <section style="background-color: var(--bg-surface);">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <i class="ph ph-quotes" style="font-size: 3rem; color: var(--border-light); margin-bottom: 2rem;"></i>
+                <h3 style="font-size: 1.5rem; font-weight: 500; line-height: 1.6; margin-bottom: 2rem;">
+                    "Kai Studio no solo hizo nuestra web, reestructuró cómo vendemos. Entendieron nuestro negocio mejor que nosotros mismos y los números de este trimestre lo demuestran."
+                </h3>
+                <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+                    <div style="width: 50px; height: 50px; background: #ddd; border-radius: 50%; overflow: hidden;">
+                        <img src="assets/img/webs/Limbo42.png" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="text-align: left;">
+                        <span style="display: block; font-weight: 700;">Limbo42 Agency</span>
+                        <span class="text-sm" style="color: var(--text-secondary);">Partner Estratégico</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <script src="js/tracking.js"></script>
     <script src="js/main.js"></script>
-</body>
+    <script src="js/loader.js"></script> </body>
 </html>
