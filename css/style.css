@@ -133,3 +133,79 @@ section { padding: var(--section-spacing) 0; }
         padding: 0.5rem;
     }
 }
+
+/* --- BUTTONS (REFORZADO) --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 2rem;
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    transition: var(--transition-base);
+    gap: 0.5rem;
+    cursor: pointer;
+    text-decoration: none; /* Quita subrayado */
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--color-black) !important; /* Fondo Negro Fuerte */
+    color: #ffffff !important; /* Texto BLANCO PURO forzado */
+    border: 1px solid var(--color-black);
+}
+
+.btn-primary:hover {
+    background-color: #333333 !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-primary);
+    border-color: var(--border-light);
+}
+
+.btn-secondary:hover {
+    border-color: var(--color-black);
+    background-color: var(--bg-surface);
+}
+
+/* --- NAVBAR (FIX COMPONENTE) --- */
+/* Aseguramos que el navbar tenga estilo aunque se cargue por JS */
+#navbar-container .navbar {
+    width: 100%;
+    /* Si se ve desordenado, puede ser que falte el flex en el contenedor */
+    display: flex; 
+    align-items: center;
+}
+
+/* --- PRELOADER SYSTEM --- */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-body); /* Fondo blanco/negro según tu tema */
+    z-index: 9999; /* Por encima de TODO */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease-out;
+}
+
+/* Espacio para tu GIF */
+.preloader-gif {
+    width: 100px; /* Ajusta al tamaño de tu GIF */
+    height: auto;
+    /* Si no tienes el GIF aún, usa esto temporalmente: */
+    /* animation: pulse 1.5s infinite; */
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); opacity: 0.5; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(0.95); opacity: 0.5; }
+}
