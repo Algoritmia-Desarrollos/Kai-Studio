@@ -176,7 +176,7 @@ h1, h2, h3 {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 4rem; align-items: center; justify-items: center; opacity: 0.8;
 }
-.client-logo { max-height: 40px; filter: grayscale(100%); transition: all 0.4s var(--transition-smooth); opacity: 0.6; }
+.client-logo { max-height: 90px; filter: grayscale(100%); transition: all 0.4s var(--transition-smooth); opacity: 0.6; }
 .client-logo:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
 
 /* Pillars / Services */
@@ -319,7 +319,7 @@ h1, h2, h3 {
     display: flex;
     width: max-content;
     animation: scroll 40s linear infinite;
-    gap: 8rem; /* Increased gap for better spacing */
+    gap: 6rem; /* Increased gap for better spacing */
 }
 
 .carousel-track:hover {
@@ -327,18 +327,22 @@ h1, h2, h3 {
 }
 
 .carousel-track .client-logo {
-    height: 150px;
+    height: 90px; /* Tamaño aumentado para mayor visibilidad */
     width: auto;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-    background: #333; /* Dark gray for debugging */
-    padding: 1.5rem;
-    border-radius: 1rem;
-    box-shadow: var(--shadow-md);
+    object-fit: contain; /* Asegura que el logo no se deforme */
+    transition: transform 0.3s ease, filter 0.3s ease;
+    
+    /* Quitamos el fondo gris (#333) que tenías antes */
+    background: transparent; 
+    padding: 0 1rem; /* Espacio lateral entre logos */
+    
+    /* Estilo inicial: a color */
+    filter: grayscale(0%) opacity(1);
 }
 
 .carousel-track .client-logo:hover {
     transform: scale(1.1);
+    filter: grayscale(0%) opacity(1); /* Al pasar el mouse se ve a color */
 }
 
 @keyframes scroll {
@@ -347,5 +351,16 @@ h1, h2, h3 {
     }
     100% {
         transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-track {
+        gap: 3rem; /* Espacio reducido en móviles */
+    }
+    
+    .carousel-track .client-logo {
+        height: 80px; /* Logos más pequeños en móvil */
+        padding: 0 0.5rem;
     }
 }
