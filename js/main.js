@@ -1,34 +1,28 @@
-// js/main.js - Versión Blindada
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("🚀 Main.js cargado correctamente");
+    console.log("🚀 Main.js cargado - Algoritmia");
 
-    // 1. OBSERVER DE ANIMACIONES (Reveal)
+    // 1. REVEAL ANIMATION (Aparecer al hacer scroll)
     const observerOptions = {
-        threshold: 0.15, // Se activa cuando el 15% del elemento es visible
-        rootMargin: "0px"
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px" // Activa la animación un poco antes
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                // Dejar de observar una vez animado (Mejora performance)
-                observer.unobserve(entry.target);
+                observer.unobserve(entry.target); // Dejar de observar para ganar rendimiento
             }
         });
     }, observerOptions);
 
-    // Seleccionar todos los elementos con clase .reveal
     const hiddenElements = document.querySelectorAll('.reveal');
-    if (hiddenElements.length === 0) console.warn("⚠️ No encontré elementos .reveal");
-    
     hiddenElements.forEach(el => observer.observe(el));
 
-    // 2. TIMELINE SCROLL FOCUS (Centro de pantalla)
+    // 2. TIMELINE CENTERING (Solo si existe en la página)
     const timelineItems = document.querySelectorAll('.timeline-item');
-    
     if (timelineItems.length > 0) {
-        const handleScroll = () => {
+        window.addEventListener('scroll', () => {
             const viewportCenter = window.innerHeight / 2;
             let closestItem = null;
             let minDistance = Infinity;
@@ -51,36 +45,33 @@ document.addEventListener('DOMContentLoaded', () => {
                     item.classList.remove('active-center');
                 }
             });
-        };
-
-        // Escuchar scroll y ejecutar al inicio
-        window.addEventListener('scroll', handleScroll);
-        handleScroll(); // Ejecutar una vez al cargar
+        });
     }
+
+    // 3. CARRUSEL DE CASOS (Lógica Manual)
+    initCarousel();
 });
 
-/* --- LOGICA CARRUSEL DE CASOS --- */
-document.addEventListener('DOMContentLoaded', () => {
+function initCarousel() {
     const slides = document.querySelectorAll('.case-slide');
     const nextBtn = document.querySelector('.next-case');
     const prevBtn = document.querySelector('.prev-case');
+    
+    // Si no hay slides, no hacemos nada (evita errores en páginas sin carrusel)
+    if (slides.length === 0) return;
+
     let currentSlide = 0;
 
     function showSlide(index) {
-        // Ocultar todos
         slides.forEach(slide => slide.classList.remove('active'));
         
-        // Calcular índice cíclico
         if (index >= slides.length) currentSlide = 0;
         else if (index < 0) currentSlide = slides.length - 1;
         else currentSlide = index;
 
-        // Mostrar nuevo
         slides[currentSlide].classList.add('active');
     }
 
-    if(nextBtn && prevBtn) {
-        nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
-        prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
-    }
-});
+    if (nextBtn) nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+    if (prevBtn) prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+}

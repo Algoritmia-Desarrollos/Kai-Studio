@@ -1,16 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     const footerContainer = document.getElementById('footer-container');
+    const year = new Date().getFullYear();
 
     if (footerContainer) {
-        const year = new Date().getFullYear();
-        
         footerContainer.innerHTML = `
             <footer class="footer-main">
                 <div class="container">
                     <div class="grid-3">
                         <div>
                             <a href="index.html" class="logo mb-4" style="font-size: 1.25rem;">
-<span>A</span>Algoritmia
+                                <span>A</span>Algoritmia
                             </a>
                             <p class="text-sm text-secondary" style="max-width: 250px;">
                                 Growth Partner para negocios que buscan escalar su facturación, no sus excusas.
@@ -47,10 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
 
                     <div class="footer-bottom mt-8" style="padding-top: 2rem; border-top: 1px solid var(--border-light); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-                        <p class="text-sm text-secondary">© ${year} Todos los derechos reservados.</p>
+                        <p class="text-sm text-secondary">© ${year} Algoritmia Desarrollos. Todos los derechos reservados.</p>
                         <div class="social-links flex-center" style="gap: 1rem;">
-                            <a href="#" aria-label="Instagram" style="color: var(--text-primary); text-decoration: none;"><i class="ph ph-instagram-logo" style="font-size: 1.25rem;"></i></a>
-                            <a href="#" aria-label="LinkedIn" style="color: var(--text-primary); text-decoration: none;"><i class="ph ph-linkedin-logo" style="font-size: 1.25rem;"></i></a>
+                            <a href="https://instagram.com/algoritmia_desarrollos" target="_blank" aria-label="Instagram" style="color: var(--text-primary); text-decoration: none;"><i class="ph ph-instagram-logo" style="font-size: 1.25rem;"></i></a>
                         </div>
                     </div>
                 </div>

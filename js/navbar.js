@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const navbarContainer = document.getElementById('navbar-container');
     
-    // 1. INYECCIÓN DEL HTML (Centralizado)
+    // 1. INYECCIÓN DEL HTML (Asegúrate de que las rutas sean relativas)
     if (navbarContainer) {
         navbarContainer.innerHTML = `
             <div class="navbar-fixed-wrapper">
@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="liquidGlass-shine"></div>
                 
                 <div class="liquidGlass-content" style="flex-direction: column; align-items: flex-start; gap: 1.5rem;">
+                    <a href="index.html" class="mobile-link">Inicio</a>
                     <a href="index.html#metodo" class="mobile-link">Método</a>
                     <a href="casos.html" class="mobile-link">Casos de Éxito</a>
                     <a href="contacto.html" class="mobile-link">Contacto</a>
@@ -49,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </a>
                 </div>
             </div>
-
+            
             <svg style="display: none">
                 <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
                     <feTurbulence type="fractalNoise" baseFrequency="0.01 0.01" numOctaves="1" seed="5" result="turbulence" />
@@ -68,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </svg>
         `;
         
+        // Iniciamos la lógica inmediatamente después de inyectar el HTML
         initNavbarLogic();
     }
 });
@@ -77,9 +79,13 @@ function initNavbarLogic() {
     const toggle = document.getElementById('mobile-toggle');
     const menu = document.getElementById('mobile-menu');
     const links = document.querySelectorAll('.mobile-link');
+    
+    // Verificamos que los elementos existan para evitar errores en consola
+    if (!nav || !toggle || !menu) return;
+
     const icon = toggle.querySelector('i');
 
-    // 2. LOGICA SCROLL (Efecto Glass)
+    // 2. LÓGICA SCROLL (Efecto Glass al bajar)
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             nav.classList.add('scrolled');
@@ -88,24 +94,43 @@ function initNavbarLogic() {
         }
     });
 
-    // 3. MENU MÓVIL (Toggle)
-    toggle.addEventListener('click', () => {
+    // 3. MENÚ MÓVIL (Abrir/Cerrar)
+    toggle.addEventListener('click', (e) => {
+        e.stopPropagation(); // Evita clics fantasma
         const isOpen = menu.classList.contains('active');
         
         if (isOpen) {
-            menu.classList.remove('active');
-            icon.classList.replace('ph-x', 'ph-list');
+            closeMenu();
         } else {
-            menu.classList.add('active');
-            icon.classList.replace('ph-list', 'ph-x');
+            openMenu();
         }
     });
 
     // Cerrar menú al hacer clic en un enlace
     links.forEach(link => {
-        link.addEventListener('click', () => {
-            menu.classList.remove('active');
-            icon.classList.replace('ph-x', 'ph-list');
-        });
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Funciones auxiliares para mantener el código limpio
+    function openMenu() {
+        menu.classList.add('active');
+        if(icon) icon.classList.replace('ph-list', 'ph-x');
+    }
+
+    function closeMenu() {
+        menu.classList.remove('active');
+        if(icon) icon.classList.replace('ph-x', 'ph-list');
+    }
+    
+    // Detectar página activa (Active State)
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        // Lógica simple para detectar si estamos en la página del enlace
+        if (link.getAttribute('href') === 'index.html' && (currentPath === '/' || currentPath.endsWith('index.html'))) {
+            // No hacemos nada o agregamos clase active si quieres
+        } else if (currentPath.includes(link.getAttribute('href'))) {
+            link.classList.add('active-link'); // Asegúrate de tener estilos para .active-link en CSS
+        }
     });
 }
