@@ -305,3 +305,47 @@ h1, h2, h3 {
     .mobile-hidden { display: none !important; } /* Ocultar botón CTA desktop en móvil */
     .hamburger { display: block; }
 }
+
+
+/* Carousel Animation */
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    /* mask-image removed for debugging */
+}
+
+.carousel-track {
+    display: flex;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+    gap: 8rem; /* Increased gap for better spacing */
+}
+
+.carousel-track:hover {
+    animation-play-state: paused;
+}
+
+.carousel-track .client-logo {
+    height: 150px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    background: #333; /* Dark gray for debugging */
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-md);
+}
+
+.carousel-track .client-logo:hover {
+    transform: scale(1.1);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
