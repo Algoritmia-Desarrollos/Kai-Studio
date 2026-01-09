@@ -164,11 +164,25 @@ h1, h2, h3 {
 
 /* Hero */
 .hero-wrapper {
-    position: relative; min-height: 85vh; display: flex; align-items: center;
-    padding-top: var(--header-height);
+    position: relative; 
+    min-height: 100vh; /* Full viewport height */
+    display: flex; 
+    align-items: center;
+    padding-top: 0; /* Remove padding top to center content perfectly in 100vh */
 }
-.hero-title { max-width: 18ch; margin-bottom: 2rem; }
-.hero-desc { font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 3rem; max-width: 600px; }
+.hero-title { 
+    max-width: 20ch; 
+    margin-bottom: 2rem; 
+    font-size: clamp(3rem, 6vw, 5rem); /* Slightly larger for impact */
+    line-height: 1.1;
+}
+.hero-desc { 
+    font-size: 1.25rem; 
+    color: var(--text-secondary); 
+    margin-bottom: 3rem; 
+    max-width: 550px; 
+    line-height: 1.7;
+}
 
 /* Clients Grid */
 .section-clients { padding: 3rem 0; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
@@ -242,7 +256,7 @@ h1, h2, h3 {
 @media (min-width: 768px) {
     .grid-2 { grid-template-columns: 1fr 1fr; gap: 4rem; }
     .grid-3 { grid-template-columns: repeat(3, 1fr); }
-    .hero-wrapper { min-height: 90vh; }
+    .hero-wrapper { min-height: 100vh; }
 }
 
 /* --- 🚑 PARCHE DE EMERGENCIA: FORZAR VISIBILIDAD --- */
@@ -524,21 +538,28 @@ h1, h2, h3 {
    ========================================= */
 
 /* --- HERO GRID & VIDEO --- */
+/* --- HERO GRID & VIDEO --- */
 .hero-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 4rem; /* Increased gap for cleaner separation */
     align-items: center;
-    padding-top: 2rem;
+    padding-top: 0;
 }
 
 .video-container {
-    border-radius: 20px;
+    border-radius: 24px; /* Softer corners */
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* More refined shadow */
     border: 1px solid rgba(255,255,255,0.1);
     background: #000;
-    aspect-ratio: 16/9; /* Formato video standard */
+    aspect-ratio: 16/9;
+    transform: perspective(1000px) rotateY(-2deg); /* Subtle 3D effect */
+    transition: transform 0.5s ease;
+}
+
+.video-container:hover {
+    transform: perspective(1000px) rotateY(0deg);
 }
 
 .video-container video {
@@ -548,21 +569,42 @@ h1, h2, h3 {
 }
 
 /* RESPONSIVE HERO ORDER */
+/* RESPONSIVE HERO ORDER */
 @media (max-width: 768px) {
     .hero-grid {
-        /* En móvil usamos áreas para forzar el orden: Texto -> Video -> Botones */
-        grid-template-areas: 
-            "text"
-            "video"
-            "buttons";
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        text-align: center;
     }
-    .hero-text-area { display: contents; } /* Permite que los hijos obedezcan al grid padre */
     
-    .hero-text-area > *:not(.hero-buttons) { grid-area: text; }
-    .hero-buttons { grid-area: buttons; margin-top: 1rem; }
-    .hero-video-area { grid-area: video; margin: 1rem 0; }
+    .hero-text-area { 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     
-    .hero-title { font-size: 2.5rem; } /* Ajuste tamaño fuente móvil */
+    .hero-buttons {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .hero-title { 
+        font-size: 2.5rem; 
+        margin-left: auto;
+        margin-right: auto;
+    } 
+    
+    .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .video-container {
+        width: 100%;
+        max-width: 500px; /* Limit video width on mobile */
+        margin: 0 auto;
+    }
 }
 
 @media (min-width: 769px) {
