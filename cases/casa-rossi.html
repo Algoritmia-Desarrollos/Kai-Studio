@@ -3,62 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
     <title>Caso Casa Rossi | Algoritmia</title>
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/variables.css">
+    
+    <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    
     <link rel="stylesheet" href="../css/style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="../index.html" class="logo">Algoritmia.</a>
-        <a href="../index.html#contacto" class="btn btn-sm btn-primary">Agendar Auditoría</a>
-    </nav>
+    
+    <div id="preloader">
+        <img src="../assets/img/logo-kai-animado.gif" alt="Cargando..." class="preloader-gif">
+    </div>
 
-    <main>
-        <section class="container" style="padding-top: 150px; padding-bottom: 50px;">
-            <p class="text-uppercase text-highlight mb-2">Tráfico & Omnicanalidad</p>
-            <h1 class="text-display mb-4">Casa Rossi.</h1>
-            <p class="text-lg text-secondary" style="max-width: 700px;">
+    <div id="navbar-container"></div>
+    <script>window.isSubfolder = true;</script>
+
+    <header class="reveal" style="padding-top: 8rem; padding-bottom: 4rem; text-align: center;">
+        <div class="container">
+            <span class="text-uppercase text-secondary mb-2">Tráfico & Omnicanalidad</span>
+            <h1 class="text-display mb-4">Casa Rossi</h1>
+            <p class="text-lg" style="max-width: 600px; margin: 0 auto;">
                 Duplicamos el tráfico digital y físico en solo 3 meses mediante una estrategia agresiva de contenidos y publicidad.
             </p>
-        </section>
+        </div>
+    </header>
 
-        <div class="container mb-5">
-            <div style="width: 100%; height: 500px; background: #222; border-radius: 20px; overflow: hidden; position: relative;">
-                <img src="../assets/logos/caserossi.webp" alt="Casa Rossi" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; padding: 20px; background: white; border-radius: 10px;">
-                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, black); height: 200px;"></div>
+    <section class="reveal">
+        <div class="container">
+            <div class="case-img-container" style="background: #222; padding: 2rem; display: flex; justify-content: center; align-items: center;">
+                <img src="../assets/logos/caserossi.webp" alt="Casa Rossi Logo" style="max-width: 50%; height: auto; background: white; padding: 1rem; border-radius: 10px;">
             </div>
         </div>
+    </section>
 
-        <section class="container mb-5">
-            <div class="grid-2" style="align-items: center;">
+    <section class="reveal" style="padding: var(--section-spacing) 0;">
+        <div class="container">
+            <div class="grid-2">
                 <div>
-                    <h3 class="text-h3 mb-3">Estrategia Omnicanal</h3>
-                    <p class="text-body mb-4">
-                        El objetivo no era solo que la gente viera la web, sino que <strong>fuera al local</strong>. Implementamos una estrategia donde las redes sociales alimentaban la web, y la web empujaba la visita física.
-                    </p>
-                    <div style="border-left: 2px solid var(--color-primary); padding-left: 1.5rem;">
-                        <p class="text-lg text-white">"Trabajando 3 meses únicamente, logramos resultados que otros prometían en un año."</p>
-                    </div>
+                    <h3 class="text-h3 mb-4">El Desafío</h3>
+                    <p class="mb-4">El objetivo no era solo que la gente viera la web, sino que <strong>fuera al local</strong>. Implementamos una estrategia donde las redes sociales alimentaban la web, y la web empujaba la visita física.</p>
+                    
+                    <h3 class="text-h3 mb-4">La Solución</h3>
+                    <ul class="filter-list" style="list-style: none; padding: 0;">
+                        <li class="mb-2"><i class="ph ph-check"></i> Estrategia Omnicanal.</li>
+                        <li class="mb-2"><i class="ph ph-check"></i> Publicidad Geofencing.</li>
+                        <li class="mb-2"><i class="ph ph-check"></i> Contenido Viral.</li>
+                    </ul>
                 </div>
-                
-                <div class="grid-2">
-                    <div style="background: #111; padding: 1.5rem; border-radius: 12px; text-align: center; border: 1px solid #333;">
-                        <span style="font-size: 2.5rem; font-weight: 800; color: white; display: block;">+100%</span>
-                        <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Visitas Web</span>
-                    </div>
-                    <div style="background: #111; padding: 1.5rem; border-radius: 12px; text-align: center; border: 1px solid #333;">
-                        <span style="font-size: 2.5rem; font-weight: 800; color: white; display: block;">3</span>
-                        <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Meses de Gestión</span>
+                <div>
+                    <div style="background: var(--bg-surface); padding: 2rem; border-radius: var(--radius-md);">
+                        <h4 class="text-uppercase mb-4">Resultados</h4>
+                        <div class="mb-4">
+                            <span class="text-display" style="font-size: 2.5rem;">+100%</span>
+                            <p class="text-sm">Visitas Web & Local</p>
+                        </div>
+                        <div>
+                            <span class="text-display" style="font-size: 2.5rem;">3 Meses</span>
+                            <p class="text-sm">Gestión Estratégica</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+    
+    <section style="padding: 4rem 0; border-top: 1px solid var(--border-light);">
+        <div class="container flex-center" style="justify-content: space-between;">
+            <a href="../index.html#casos" class="btn btn-secondary"><i class="ph ph-arrow-left"></i> Volver</a>
+            <a href="libreria-leo.html" class="btn btn-primary">Siguiente Caso <i class="ph ph-arrow-right"></i></a>
+        </div>
+    </section>
 
-        <section class="container text-center py-5">
-            <a href="../index.html#contacto" class="btn btn-primary">Quiero más tráfico</a>
-        </section>
-    </main>
+    <div id="footer-container"></div>
+
+    <script src="../js/tracking.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/preloader.js"></script>
+    
+    <script>
+        // Este script arregla los enlaces del menú cuando estás en una subcarpeta
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const links = document.querySelectorAll('.navbar a, .mobile-menu a, footer a');
+                links.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('../')) {
+                        link.setAttribute('href', '../' + href);
+                    }
+                });
+            }, 100); // Pequeño delay para asegurar que el navbar.js haya inyectado el HTML
+        });
+    </script>
 </body>
 </html>

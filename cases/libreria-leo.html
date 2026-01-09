@@ -3,71 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
     <title>Caso Librería Leo | Algoritmia</title>
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/variables.css">
+    
+    <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    
     <link rel="stylesheet" href="../css/style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="../index.html" class="logo">Algoritmia.</a>
-        <a href="../index.html#contacto" class="btn btn-sm btn-primary">Agendar Auditoría</a>
-    </nav>
+    
+    <div id="preloader">
+        <img src="../assets/img/logo-kai-animado.gif" alt="Cargando..." class="preloader-gif">
+    </div>
 
-    <main>
-        <section class="container" style="padding-top: 150px; padding-bottom: 50px;">
-            <p class="text-uppercase text-highlight mb-2">E-Commerce & Transformación Digital</p>
-            <h1 class="text-display mb-4">Librería Mayorista Leo.</h1>
-            <p class="text-lg text-secondary" style="max-width: 700px;">
+    <div id="navbar-container"></div>
+    <script>window.isSubfolder = true;</script>
+
+    <header class="reveal" style="padding-top: 8rem; padding-bottom: 4rem; text-align: center;">
+        <div class="container">
+            <span class="text-uppercase text-secondary mb-2">E-Commerce & Transformación Digital</span>
+            <h1 class="text-display mb-4">Librería Mayorista Leo</h1>
+            <p class="text-lg" style="max-width: 600px; margin: 0 auto;">
                 Cómo transformamos un negocio tradicional en una máquina de ventas digital, aumentando su rentabilidad un 100% en 12 meses.
             </p>
-        </section>
+        </div>
+    </header>
 
-        <div class="container mb-5">
-            <div style="width: 100%; height: 400px; background: #222; border-radius: 20px; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.1);">
-                <img src="../assets/imgwebs/libreriamyoristaleo.webp" alt="Web Libreria Leo" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+    <section class="reveal">
+        <div class="container">
+            <div class="case-img-container">
+                <img src="../assets/imgwebs/libreriamyoristaleo.webp" alt="Web Libreria Leo" style="width: 100%; height: auto;">
             </div>
         </div>
+    </section>
 
-        <section class="container mb-5">
+    <section class="reveal" style="padding: var(--section-spacing) 0;">
+        <div class="container">
             <div class="grid-2">
                 <div>
-                    <h3 class="text-h3 mb-3">El Desafío</h3>
-                    <p class="text-body mb-4">
-                        Librería Leo era un referente offline, pero su proceso de venta dependía 100% del mostrador físico y pedidos por teléfono. Necesitaban <strong>automatizar la venta mayorista</strong> y llegar a clientes fuera de su zona geográfica sin aumentar la carga administrativa.
-                    </p>
+                    <h3 class="text-h3 mb-4">El Desafío</h3>
+                    <p class="mb-4">Librería Leo era un referente offline, pero su proceso de venta dependía 100% del mostrador físico y pedidos por teléfono. Necesitaban <strong>automatizar la venta mayorista</strong> y llegar a clientes fuera de su zona geográfica sin aumentar la carga administrativa.</p>
                     
-                    <h3 class="text-h3 mb-3">La Solución</h3>
-                    <ul style="list-style: none; color: var(--text-secondary); margin-bottom: 2rem;">
-                        <li class="mb-2">✅ <strong class="text-white">Desarrollo E-commerce B2B:</strong> Catálogo optimizado para compras por volumen.</li>
-                        <li class="mb-2">✅ <strong class="text-white">Automatización de Stock:</strong> Sincronización en tiempo real.</li>
-                        <li class="mb-2">✅ <strong class="text-white">Funnel de Re-compra:</strong> Estrategia de email para clientes recurrentes.</li>
+                    <h3 class="text-h3 mb-4">La Solución</h3>
+                    <ul class="filter-list" style="list-style: none; padding: 0;">
+                        <li class="mb-2"><i class="ph ph-check"></i> Desarrollo E-commerce B2B.</li>
+                        <li class="mb-2"><i class="ph ph-check"></i> Automatización de Stock.</li>
+                        <li class="mb-2"><i class="ph ph-check"></i> Funnel de Re-compra.</li>
                     </ul>
                 </div>
-                
-                <div style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
-                    <h4 class="text-h4 mb-4">Resultados Clave</h4>
-                    <div class="mb-4">
-                        <span class="text-display text-highlight" style="font-size: 3rem;">+100%</span>
-                        <p class="text-sm">Aumento de Rentabilidad Neta</p>
-                    </div>
-                    <div class="mb-4">
-                        <span class="text-display" style="font-size: 3rem; color: white;">1 Año</span>
-                        <p class="text-sm">De trabajo continuo y optimización</p>
+                <div>
+                    <div style="background: var(--bg-surface); padding: 2rem; border-radius: var(--radius-md);">
+                        <h4 class="text-uppercase mb-4">Resultados</h4>
+                        <div class="mb-4">
+                            <span class="text-display" style="font-size: 2.5rem;">+100%</span>
+                            <p class="text-sm">Rentabilidad Neta</p>
+                        </div>
+                        <div>
+                            <span class="text-display" style="font-size: 2.5rem;">1 Año</span>
+                            <p class="text-sm">De trabajo continuo</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+    
+    <section style="padding: 4rem 0; border-top: 1px solid var(--border-light);">
+        <div class="container flex-center" style="justify-content: space-between;">
+            <a href="../index.html#casos" class="btn btn-secondary"><i class="ph ph-arrow-left"></i> Volver</a>
+            <a href="puertas-jack.html" class="btn btn-primary">Siguiente Caso <i class="ph ph-arrow-right"></i></a>
+        </div>
+    </section>
 
-        <section class="container text-center py-5">
-            <h2 class="text-h2 mb-4">¿Tu negocio necesita este cambio?</h2>
-            <a href="../index.html#contacto" class="btn btn-primary">Hablemos de tu proyecto</a>
-        </section>
-    </main>
+    <div id="footer-container"></div>
 
-    <footer style="padding: 2rem; text-align: center; border-top: 1px solid #222; margin-top: 4rem;">
-        <p class="text-sm text-secondary">© 2025 Algoritmia.</p>
-    </footer>
+    <script src="../js/tracking.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/preloader.js"></script>
+    
+    <script>
+        // Este script arregla los enlaces del menú cuando estás en una subcarpeta
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const links = document.querySelectorAll('.navbar a, .mobile-menu a, footer a');
+                links.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('../')) {
+                        link.setAttribute('href', '../' + href);
+                    }
+                });
+            }, 100); // Pequeño delay para asegurar que el navbar.js haya inyectado el HTML
+        });
+    </script>
 </body>
 </html>
