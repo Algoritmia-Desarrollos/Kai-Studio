@@ -58,3 +58,29 @@ document.addEventListener('DOMContentLoaded', () => {
         handleScroll(); // Ejecutar una vez al cargar
     }
 });
+
+/* --- LOGICA CARRUSEL DE CASOS --- */
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.case-slide');
+    const nextBtn = document.querySelector('.next-case');
+    const prevBtn = document.querySelector('.prev-case');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        // Ocultar todos
+        slides.forEach(slide => slide.classList.remove('active'));
+        
+        // Calcular índice cíclico
+        if (index >= slides.length) currentSlide = 0;
+        else if (index < 0) currentSlide = slides.length - 1;
+        else currentSlide = index;
+
+        // Mostrar nuevo
+        slides[currentSlide].classList.add('active');
+    }
+
+    if(nextBtn && prevBtn) {
+        nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+        prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+    }
+});

@@ -518,3 +518,126 @@ h1, h2, h3 {
         top: 0;
     }
 }
+
+/* =========================================
+   NUEVOS ESTILOS V2 (ALGORITMIA REBRAND)
+   ========================================= */
+
+/* --- HERO GRID & VIDEO --- */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.video-container {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.1);
+    background: #000;
+    aspect-ratio: 16/9; /* Formato video standard */
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* RESPONSIVE HERO ORDER */
+@media (max-width: 768px) {
+    .hero-grid {
+        /* En móvil usamos áreas para forzar el orden: Texto -> Video -> Botones */
+        grid-template-areas: 
+            "text"
+            "video"
+            "buttons";
+    }
+    .hero-text-area { display: contents; } /* Permite que los hijos obedezcan al grid padre */
+    
+    .hero-text-area > *:not(.hero-buttons) { grid-area: text; }
+    .hero-buttons { grid-area: buttons; margin-top: 1rem; }
+    .hero-video-area { grid-area: video; margin: 1rem 0; }
+    
+    .hero-title { font-size: 2.5rem; } /* Ajuste tamaño fuente móvil */
+}
+
+@media (min-width: 769px) {
+    .hero-grid {
+        grid-template-columns: 1.2fr 0.8fr; /* Más espacio al texto en PC */
+    }
+    .hero-text-area { padding-right: 2rem; }
+}
+
+/* --- CARRUSEL DE CASOS --- */
+.cases-slider {
+    position: relative;
+    min-height: 400px;
+}
+
+.case-slide {
+    display: none; /* Ocultos por defecto */
+    animation: fadeSlide 0.5s ease forwards;
+}
+
+.case-slide.active {
+    display: block; /* Solo mostramos el activo */
+}
+
+.metrics-grid {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.metric-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.metric-label {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.case-img img {
+    width: 100%;
+    aspect-ratio: 16/9; /* Forzamos formato horizontal tipo video/pantalla */
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    object-fit: cover; /* Recorta la imagen para llenar el espacio sin deformar */
+    background: #fff; /* Fondo blanco por si la imagen es un logo transparente */
+}
+
+/* Botones del slider */
+.btn-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--border-light);
+    background: transparent;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+.btn-icon:hover {
+    background: var(--color-black);
+    color: white;
+    border-color: var(--color-black);
+}
+
+@keyframes fadeSlide {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
