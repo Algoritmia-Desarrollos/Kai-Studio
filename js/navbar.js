@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     <div class="liquidGlass-content nav-content">
                         <a href="index.html" class="logo">
-                            <span>K</span> Kai Studio
+                            <span>A</span>Algoritmia
                         </a>
 
                         <ul class="nav-links desktop-only">

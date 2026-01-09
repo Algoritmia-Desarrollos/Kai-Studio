@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="grid-3">
                         <div>
                             <a href="index.html" class="logo mb-4" style="font-size: 1.25rem;">
-                                <span>K</span> Kai Studio
+<span>A</span>Algoritmia
                             </a>
                             <p class="text-sm text-secondary" style="max-width: 250px;">
                                 Growth Partner para negocios que buscan escalar su facturación, no sus excusas.
