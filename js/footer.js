@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="container">
                     <div class="grid-3">
                         <div>
-                            <a href="index.html" class="logo mb-4" style="font-size: 1.25rem;">
+                            <a href="/index.html" class="logo mb-4" style="font-size: 1.25rem;">
                                 <span>A</span>Algoritmia
                             </a>
                             <p class="text-sm text-secondary" style="max-width: 250px;">
@@ -19,9 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div>
                             <h4 class="text-uppercase mb-4">Mapa del Sitio</h4>
                             <ul class="footer-links">
-                                <li><a href="index.html#metodo">Nuestro Método</a></li>
-                                <li><a href="casos.html">Casos de Éxito</a></li>
-                                <li><a href="contacto.html">Contacto Directo</a></li>
+                                <li><a href="/index.html#metodo">Nuestro Método</a></li>
+                                <li><a href="/casos.html">Casos de Éxito</a></li>
+                                <li><a href="/contacto.html">Contacto Directo</a></li>
                             </ul>
                         </div>
 
