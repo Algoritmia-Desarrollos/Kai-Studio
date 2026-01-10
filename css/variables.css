@@ -22,7 +22,7 @@
     --border-focus:      var(--color-black);
 
     /* --- ESPACIADO & LAYOUT --- */
-    --container-width:   1280px;
+    --container-width:   1450px;
     --header-height:     5rem;
     --section-spacing:   clamp(5rem, 8vw, 8rem);
     
