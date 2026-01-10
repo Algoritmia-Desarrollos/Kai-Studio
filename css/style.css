@@ -33,10 +33,11 @@ h1, h2, h3 {
 
 .text-display { font-size: clamp(2.5rem, 5vw, 4.5rem); }
 .text-h2 { font-size: clamp(2rem, 4vw, 3rem); }
-.text-h3 { font-size: 1.5rem; font-weight: 600; }
+.text-h3 { font-size: 1.4rem; font-weight: 600; }
+.text-h4 { font-size: 1.2rem; font-weight: 500; }
 .text-lg { font-size: 1.125rem; color: var(--text-secondary); }
 .text-sm { font-size: 0.875rem; }
-.text-uppercase { text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; font-size: 0.75rem; }
+.text-uppercase { text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; font-size: 0.6rem; margin-bottom: 0.5rem; }
 .text-highlight { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px; }
 
 /* --- COMPONENTES UI --- */
@@ -169,6 +170,7 @@ h1, h2, h3 {
     display: flex; 
     align-items: center;
     padding-top: 0; /* Remove padding top to center content perfectly in 100vh */
+    padding: 3rem 0;
 }
 .hero-title { 
     max-width: 20ch; 
@@ -177,12 +179,16 @@ h1, h2, h3 {
     line-height: 1.1;
 }
 .hero-desc { 
-    font-size: 1.1rem; 
+    font-size: 1.2rem; 
     color: var(--text-secondary); 
     margin-bottom: 2rem; 
     max-width: 550px; 
     line-height: 1.7;
 }
+
+.hero-desc strong {
+        color: red;
+    }
 
 /* Clients Grid */
 .section-clients { padding: 3rem 0; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
@@ -571,6 +577,10 @@ h1, h2, h3 {
 /* RESPONSIVE HERO ORDER */
 /* RESPONSIVE HERO ORDER */
 @media (max-width: 768px) {
+   .guarantee-block{
+    margin-top: 3rem;
+}
+
     .hero-grid {
         display: flex;
         flex-direction: column;
@@ -581,6 +591,7 @@ h1, h2, h3 {
     
     .hero-text-area { 
         display: contents; /* Flatten to allow reordering of children */
+        margin-bottom: 2rem;
     }
     
     /* Order 1: Text Elements */
@@ -722,4 +733,8 @@ h1, h2, h3 {
 @keyframes fadeSlide {
     from { opacity: 0; transform: translateX(20px); }
     to { opacity: 1; transform: translateX(0); }
+}
+
+.guarantee-block{
+    margin-top: 6rem;
 }
