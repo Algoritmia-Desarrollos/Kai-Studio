@@ -39,6 +39,7 @@ h1, h2, h3 {
 .text-sm { font-size: 0.875rem; }
 .text-uppercase { text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; font-size: 0.6rem; margin-bottom: 0.5rem; }
 .text-highlight { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px; }
+.text-highlight-temp { color: #ff0000 !important; font-weight: 700; } /* TEMPORARY RED HIGHLIGHT */
 
 /* --- COMPONENTES UI --- */
 .btn {
@@ -736,5 +737,16 @@ h1, h2, h3 {
 }
 
 .guarantee-block{
-    margin-top: 6rem;
+    margin-top: 5rem;
+}
+/* --- READABILITY IMPROVEMENTS --- */
+p { margin-bottom: 1.5rem; }
+p:last-child { margin-bottom: 0; }
+
+@media (max-width: 768px) {
+    .hero-desc {
+        margin-bottom: 1.5rem !important;
+        margin-top: 1rem !important;
+        font-size: 1.1rem !important;
+    }
 }
