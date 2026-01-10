@@ -16,8 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </a>
 
                         <ul class="nav-links desktop-only">
-                            <li><a href="/index.html#metodo">Método</a></li>
-                            <li><a href="/casos.html">Casos</a></li>
+                            <li><a href="/clientes.html">Clientes</a></li>
                             <li><a href="/contacto.html">Contacto</a></li>
                         </ul>
 
@@ -41,8 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 <div class="liquidGlass-content" style="flex-direction: column; align-items: flex-start; gap: 1.5rem;">
                     <a href="/index.html" class="mobile-link">Inicio</a>
-                    <a href="/index.html#metodo" class="mobile-link">Método</a>
-                    <a href="/casos.html" class="mobile-link">Casos de Éxito</a>
+                    <a href="/clientes.html" class="mobile-link">Clientes</a>
                     <a href="/contacto.html" class="mobile-link">Contacto</a>
                     <hr style="opacity: 0.1; margin: 0.5rem 0; width: 100%; border-color: black;">
                     <a href="https://wa.me/5493476245523" class="btn btn-primary" onclick="fireConversion('whatsapp_mobile')" style="width: 100%;">
