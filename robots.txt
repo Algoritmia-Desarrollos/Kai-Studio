@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kaistudio.net/sitemap.xml
+Sitemap: https://fatistudio.com.ar/sitemap.xml
