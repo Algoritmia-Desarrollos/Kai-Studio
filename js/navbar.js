@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="liquidGlass-shine"></div>
                     
                     <div class="liquidGlass-content nav-content">
-                        <a href="/index.html" class="logo">
+                        <a href="/" class="logo">
                             <span>A</span>Algoritmia
                         </a>
 
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="liquidGlass-shine"></div>
                 
                 <div class="liquidGlass-content" style="flex-direction: column; align-items: flex-start; gap: 1.5rem;">
-                    <a href="/index.html" class="mobile-link">Inicio</a>
+                    <a href="/" class="mobile-link">Inicio</a>
                     <a href="/clientes.html" class="mobile-link">Casos Reales</a>
                     <a href="/contacto.html" class="mobile-link">Contacto</a>
                     <hr style="opacity: 0.1; margin: 0.5rem 0; width: 100%; border-color: black;">
