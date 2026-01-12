@@ -19,6 +19,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const hiddenElements = document.querySelectorAll('.reveal');
     hiddenElements.forEach(el => observer.observe(el));
 
+    // Fallback: Si el usuario tiene preferencias de movimiento reducido o JS falla
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        hiddenElements.forEach(el => el.classList.add('active'));
+    }
+    
+    // Fallback de seguridad: Forzar visibilidad después de 3 segundos si algo falla
+    setTimeout(() => {
+        hiddenElements.forEach(el => {
+            if (getComputedStyle(el).opacity === '0') {
+                el.classList.add('active');
+            }
+        });
+    }, 3000);
+
     // 2. TIMELINE CENTERING (Solo si existe en la página)
     const timelineItems = document.querySelectorAll('.timeline-item');
     if (timelineItems.length > 0) {

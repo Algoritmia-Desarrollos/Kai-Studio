@@ -39,7 +39,15 @@ h1, h2, h3 {
 .text-sm { font-size: 0.875rem; }
 .text-uppercase { text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; font-size: 0.6rem; margin-bottom: 0.5rem; }
 .text-highlight { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px; }
-.text-highlight-temp { color: #ff0000 !important; font-weight: 700; } /* TEMPORARY RED HIGHLIGHT */
+.text-highlight-temp { color: var(--color-black) !important; font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; } /* Migrated to black/underline */
+.text-highlight-premium { 
+    background: linear-gradient(120deg, transparent 0%, transparent 60%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.1) 100%);
+    background-size: 100% 40%;
+    background-repeat: no-repeat;
+    background-position: 0 90%;
+    font-weight: 700;
+    padding: 0 2px;
+}
 
 /* --- COMPONENTES UI --- */
 .btn {
@@ -259,6 +267,29 @@ h1, h2, h3 {
 .grid-3 { display: grid; grid-template-columns: 1fr; gap: 2rem; }
 .mb-2 { margin-bottom: 1rem; } .mb-4 { margin-bottom: 2rem; }
 .mt-4 { margin-top: 2rem; } .mt-8 { margin-top: 5rem; }
+.fw-600 { font-weight: 600; }
+.ls-1 { letter-spacing: 1px; }
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.max-w-800 { max-width: 800px; }
+.max-w-600 { max-width: 600px; }
+.text-secondary-color { color: var(--text-secondary); }
+.text-white { color: var(--color-white); }
+.text-inverse { color: var(--text-inverse); }
+.py-section { padding: var(--section-spacing) 0; }
+.relative { position: relative; }
+.overflow-hidden { overflow: hidden; }
+.flex-between-end { display: flex; justify-content: space-between; align-items: end; }
+.grid-center { display: grid; align-items: center; }
+.lh-1-6 { line-height: 1.6; }
+.gap-1 { gap: 1rem; }
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.object-contain { object-fit: contain; }
+.p-5px { padding: 5px; }
+.bg-white { background: var(--color-white); }
+.bg-dark { background-color: var(--bg-dark); }
+.py-5rem { padding: 5rem 0; }
 
 @media (min-width: 768px) {
     .grid-2 { grid-template-columns: 1fr 1fr; gap: 4rem; }
