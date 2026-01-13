@@ -81,7 +81,7 @@
     
     <section style="padding: 4rem 0; border-top: 1px solid var(--border-light);">
         <div class="container flex-center" style="justify-content: space-between;">
-            <a href="/index.html#casos" class="btn btn-secondary"><i class="ph ph-arrow-left"></i> Volver</a>
+            <a href="/index.html#casos" onclick="if(document.referrer) { history.back(); return false; }" class="btn btn-secondary"><i class="ph ph-arrow-left"></i> Volver</a>
             <a href="/cases/libreria-leo.html" class="btn btn-primary">Siguiente Caso <i class="ph ph-arrow-right"></i></a>
         </div>
     </section>
