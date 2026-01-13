@@ -949,3 +949,112 @@ p:last-child { margin-bottom: 0; }
     /* Asegura que la animación de entrada no cause repintados masivos */
     will-change: opacity, transform;
 }
+/* =========================================
+   CASE STUDY SPECIFIC STYLES (HIGH CONTRAST)
+   ========================================= */
+
+/* --- Layout & Typography --- */
+.case-study-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.case-study-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    color: var(--color-black); /* Force black for readability */
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.case-study-list li i {
+    color: var(--color-black); /* Icon also black */
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.case-study-list strong {
+    font-weight: 700;
+    color: var(--color-black);
+    display: block; /* Title on its own line */
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+}
+
+/* --- Results Card (Apple Style) --- */
+.results-card {
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 100px;
+}
+
+.results-card h4 {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: #888;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.result-item {
+    margin-bottom: 2.5rem;
+}
+
+.result-label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.result-value-before {
+    font-size: 1.5rem;
+    color: #999;
+    text-decoration: line-through;
+    margin-bottom: 0.25rem;
+    display: block;
+    font-weight: 500;
+}
+
+.result-value-after {
+    font-size: 3.5rem; /* Big impact */
+    font-weight: 800;
+    color: var(--color-black);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    display: block;
+}
+
+.result-impact {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.5;
+}
+
+.result-impact strong {
+    color: var(--color-black);
+    font-weight: 700;
+}
+
+/* --- Image Placeholder Refinement --- */
+.image-placeholder {
+    background: #f9f9f9;
+    border: none; /* Remove dashed border for cleaner look */
+    color: #000;
+}
+.image-placeholder i {
+    color: #000;
+    opacity: 0.2;
+}
+
