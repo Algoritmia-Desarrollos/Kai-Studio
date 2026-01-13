@@ -33,10 +33,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, 3000);
 
-    // 2. TIMELINE CENTERING (Solo si existe en la página)
+    // 2. TIMELINE CENTERING (Optimized with requestAnimationFrame)
     const timelineItems = document.querySelectorAll('.timeline-item');
     if (timelineItems.length > 0) {
+        let ticking = false;
+
         window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    checkTimelineScroll();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        function checkTimelineScroll() {
             const viewportCenter = window.innerHeight / 2;
             let closestItem = null;
             let minDistance = Infinity;
@@ -59,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     item.classList.remove('active-center');
                 }
             });
-        });
+        }
     }
 
     // 3. CARRUSEL DE CASOS (Lógica Manual)

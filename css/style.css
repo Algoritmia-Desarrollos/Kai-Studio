@@ -117,6 +117,13 @@ h1, h2, h3 {
   background: rgba(255, 255, 255, 0.1);
 }
 
+/* Fallback for browsers that don't support backdrop-filter */
+@supports not (backdrop-filter: blur(5px)) {
+    .liquidGlass-effect {
+        background: rgba(255, 255, 255, 0.95);
+    }
+}
+
 .liquidGlass-tint {
   z-index: 1;
   position: absolute;
@@ -297,13 +304,7 @@ h1, h2, h3 {
     .hero-wrapper { min-height: 100vh; }
 }
 
-/* --- 🚑 PARCHE DE EMERGENCIA: FORZAR VISIBILIDAD --- */
-/* Si el JS falla, esto asegura que la web se vea igual */
-.reveal {
-    opacity: 1 !important;
-    transform: none !important;
-    visibility: visible !important;
-}
+/* --- 🚑 PARCHE DE EMERGENCIA ELIMINADO --- */
 
 #preloader {
     display: none !important; /* Ocultamos el preloader para ver si hay web debajo */
@@ -441,7 +442,7 @@ h1, h2, h3 {
 
 .timeline-item {
     display: flex;
-    gap: 3rem;
+    gap: 1.5rem; /* Reduced gap for mobile */
     margin-bottom: 2rem;
     position: relative;
     align-items: center;
