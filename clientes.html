@@ -6,14 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <title>Clientes | Algoritmia - Resultados Reales</title>
-    <meta name="description" content="Conoce los casos de éxito de Algoritmia. Transformamos negocios con estrategias digitales y growth marketing. Resultados comprobables.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://fatistudio.com.ar/clientes.html">
-    <meta property="og:title" content="Clientes | Algoritmia - Resultados Reales">
-    <meta property="og:description" content="Conoce los casos de éxito de Algoritmia. Transformamos negocios con estrategias digitales y growth marketing.">
-    <meta property="og:image" content="https://fatistudio.com.ar/web-app-manifest-512x512.png">
-    <meta name="robots" content="index, follow">
-    <link rel="theme-color" content="#0a0a0a"> 
+    <meta name="description" content="Portfolio de Algoritmia. Casos de éxito reales: aumento de facturación, tráfico y transformación digital.">
     
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -27,8 +20,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        /* Pequeño ajuste local para los tags de servicios */
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-light);
+        }
+        .tag {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            background: #f4f4f5;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+    </style>
 </head>
 <body>
 
@@ -36,9 +48,71 @@
         <img src="/assets/img/logo-kai-animado.gif" alt="Cargando..." class="preloader-gif">
     </div>
 
-    <div id="navbar-container"></div>
+    <div id="navbar-container">
+            <div class="navbar-fixed-wrapper">
+                <nav class="navbar liquidGlass-wrapper" id="main-nav">
+                    <div class="liquidGlass-effect"></div>
+                    <div class="liquidGlass-tint"></div>
+                    <div class="liquidGlass-shine"></div>
+                    
+                    <div class="liquidGlass-content nav-content">
+                        <a href="/" class="logo">
+                            <span>A</span>Algoritmia
+                        </a>
 
-    <section class="hero-wrapper reveal" style="min-height: 00vh; padding-top: 8rem; align-items: center;">
+                        <ul class="nav-links desktop-only">
+                            <li><a href="/clientes.html">Casos Reales</a></li>
+                            <li><a href="/contacto.html">Contacto</a></li>
+                        </ul>
+
+                        <div class="nav-actions">
+                            <a href="https://wa.me/5493476245523" class="btn btn-primary btn-sm mobile-hidden" onclick="fireConversion('whatsapp_nav')">
+                                Auditoría Gratis
+                            </a>
+                            
+                            <button class="hamburger" id="mobile-toggle" aria-label="Menú">
+                                <i class="ph ph-list" style="font-size: 1.5rem;"></i>
+                            </button>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="mobile-menu liquidGlass-wrapper" id="mobile-menu">
+                <div class="liquidGlass-effect"></div>
+                <div class="liquidGlass-tint"></div>
+                <div class="liquidGlass-shine"></div>
+                
+                <div class="liquidGlass-content" style="flex-direction: column; align-items: flex-start; gap: 1.5rem;">
+                    <a href="/" class="mobile-link">Inicio</a>
+                    <a href="/clientes.html" class="mobile-link">Casos Reales</a>
+                    <a href="/contacto.html" class="mobile-link">Contacto</a>
+                    <hr style="opacity: 0.1; margin: 0.5rem 0; width: 100%; border-color: black;">
+                    <a href="https://wa.me/5493476245523" class="btn btn-primary" onclick="fireConversion('whatsapp_mobile')" style="width: 100%;">
+                        Pedir Auditoría
+                    </a>
+                </div>
+            </div>
+            
+            <svg style="display: none">
+                <filter id="glass-distortion" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.01 0.01" numOctaves="1" seed="5" result="turbulence" />
+                    <feComponentTransfer in="turbulence" result="mapped">
+                        <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
+                        <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
+                        <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
+                    </feComponentTransfer>
+                    <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+                    <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100" lighting-color="white" result="specLight">
+                        <fePointLight x="-200" y="-200" z="300" />
+                    </feSpecularLighting>
+                    <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage" />
+                    <feDisplacementMap in="SourceGraphic" in2="softMap" scale="150" xChannelSelector="R" yChannelSelector="G" />
+                </filter>
+            </svg>
+    </div>
+
+    <section class="hero-wrapper reveal" style="min-height: 40vh; padding-top: 10rem; align-items: flex-start;">
         <div class="container">
             <div style="max-width: 800px;">
                 <p class="text-uppercase text-secondary">Portfolio & Trayectoria</p>
@@ -47,7 +121,7 @@
                     <span class="text-highlight">Reales</span>.
                 </h1>
                 <p class="text-lg" style="max-width: 600px;">
-                    Casos de éxito y transformaciones de negocio reales.
+                    Aquí documentamos cómo transformamos la facturación de nuestros socios.
                 </p>
             </div>
         </div>
@@ -57,93 +131,111 @@
         <div class="container">
             <div class="portfolio-grid">
                 
-                <a href="/cases/libreria-leo.html" class="portfolio-card" style="text-decoration: none; color: inherit; display: flex;">
+                <a href="/cases/libreria-leo.html" class="portfolio-card" style="text-decoration: none; color: inherit;">
                     <div class="portfolio-img-holder">
                         <img src="/assets/imgwebs/libreriamyoristaleo.webp" alt="Librería Leo Web">
                         <div class="portfolio-overlay">
-                            <span class="badge">E-Commerce Mayorista</span>
+                            <span class="badge">E-Commerce B2B</span>
                         </div>
                     </div>
                     <div class="portfolio-content">
-                        <h3 class="text-h3 mb-2">Mayorista Leo</h3>
-                        <p class="metric-highlight">+100% Rentabilidad</p>
-                        <p class="text-sm text-secondary mb-4">Transformación digital completa de un negocio tradicional a líder de ventas online.</p>
-                        <span class="link-arrow">Ver Caso Completo <i class="ph ph-arrow-right"></i></span>
+                        <div class="mb-2">
+                            <h3 class="text-h3">Mayorista Leo</h3>
+                            <p class="text-sm text-secondary">1 Año de trabajo continuo</p>
+                        </div>
+                        
+                        <p class="metric-highlight">+500% Facturación</p>
+                        
+                        <p class="text-sm text-secondary mb-4">
+                            Logramos automatizar la venta mayorista. Aumentamos el tráfico mensual y las ventas diarias mediante Meta Ads y una web optimizada. Pasaron del teléfono al carrito de compras masivo.
+                        </p>
+                        
+                        <div class="service-tags">
+                            <span class="tag">Desarrollo Web</span>
+                            <span class="tag">Meta Ads</span>
+                            <span class="tag">Estrategia Growth</span>
+                        </div>
                     </div>
                 </a>
 
-                <a href="/cases/puertas-jack.html" class="portfolio-card" style="text-decoration: none; color: inherit; display: flex;">
+                <a href="/cases/puertas-jack.html" class="portfolio-card" style="text-decoration: none; color: inherit;">
                     <div class="portfolio-img-holder">
-                        <img src="/assets/logos/puertasjack.webp" alt="Puertas Jack Web" style="object-fit: contain; padding: 2rem; background: #fff;">
+                        <img src="/assets/logos/puertasjack.webp" alt="Puertas Jack" style="object-fit: contain; padding: 3rem; background: #fff;">
                         <div class="portfolio-overlay">
-                            <span class="badge">High Ticket</span>
+                            <span class="badge">High Ticket / Seguridad</span>
                         </div>
                     </div>
                     <div class="portfolio-content">
-                        <h3 class="text-h3 mb-2">Puertas Jack</h3>
-                        <p class="metric-highlight">8 Ventas Mes 1</p>
-                        <p class="text-sm text-secondary mb-4">Estrategia de venta consultiva para productos de alto valor en tiempo récord.</p>
-                        <span class="link-arrow">Ver Caso Completo <i class="ph ph-arrow-right"></i></span>
+                        <div class="mb-2">
+                            <h3 class="text-h3">Puertas Jack</h3>
+                            <p class="text-sm text-secondary">1 Año de trabajo continuo</p>
+                        </div>
+
+                        <p class="metric-highlight">+30% Ventas Mensuales</p>
+                        
+                        <p class="text-sm text-secondary mb-4">
+                            Empezamos de cero solo con publicidad. Mes a mes iteramos la estrategia en Meta Ads para superar el mes anterior. Ventas de alto valor constantes y predecibles.
+                        </p>
+
+                        <div class="service-tags">
+                            <span class="tag">Meta Ads Funnels</span>
+                            <span class="tag">Copywriting</span>
+                            <span class="tag">Consultoría</span>
+                        </div>
                     </div>
                 </a>
 
-                <a href="/cases/casa-rossi.html" class="portfolio-card" style="text-decoration: none; color: inherit; display: flex;">
+                <a href="/cases/casa-rossi.html" class="portfolio-card" style="text-decoration: none; color: inherit;">
                     <div class="portfolio-img-holder">
-                        <img src="/assets/logos/caserossi.webp" alt="Casa Rossi" style="object-fit: contain; padding: 2rem; background: #fff;">
+                        <img src="/assets/logos/caserossi.webp" alt="Casa Rossi" style="object-fit: contain; padding: 3rem; background: #fff;">
                         <div class="portfolio-overlay">
                             <span class="badge">Retail & Deco</span>
                         </div>
                     </div>
                     <div class="portfolio-content">
-                        <h3 class="text-h3 mb-2">Casa Rossi</h3>
-                        <p class="metric-highlight">+100% Tráfico Web</p>
-                        <p class="text-sm text-secondary mb-4">Posicionamiento de marca y atracción de tráfico cualificado.</p>
-                        <span class="link-arrow">Ver Caso Completo <i class="ph ph-arrow-right"></i></span>
+                        <div class="mb-2">
+                            <h3 class="text-h3">Casa Rossi</h3>
+                            <p class="text-sm text-secondary">Lanzamiento Reciente</p>
+                        </div>
+
+                        <p class="metric-highlight">Expansión & Viralidad</p>
+                        
+                        <p class="text-sm text-secondary mb-4">
+                            Creamos contenidos virales que dispararon la visibilidad de la marca. Aprovechamos ese tráfico para lanzar su e-commerce y expandir la venta de local físico a digital.
+                        </p>
+
+                        <div class="service-tags">
+                            <span class="tag">E-Commerce</span>
+                            <span class="tag">Social Media</span>
+                            <span class="tag">Ads de Alcance</span>
+                        </div>
                     </div>
                 </a>
 
                 <article class="portfolio-card">
                     <div class="portfolio-img-holder">
-                        <img src="/assets/imgwebs/Selecta.webp" alt="Selecta Web">
-                        <div class="portfolio-overlay">
-                            <span class="badge">Real Estate</span>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="text-h3 mb-2">Selecta Propiedades</h3>
-                        <p class="metric-highlight">Automatización</p>
-                        <p class="text-sm text-secondary mb-4">Sistema de captación de leads inmobiliarios y diseño web premium.</p>
-                        <span class="text-sm" style="opacity: 0.5;">Ver Web <i class="ph ph-arrow-up-right"></i></span>
-                    </div>
-                </article>
-
-                <article class="portfolio-card">
-                    <div class="portfolio-img-holder">
-                        <img src="/assets/imgwebs/TatuajeTop.webp" alt="Tatuaje Top">
-                        <div class="portfolio-overlay">
-                            <span class="badge">Marketplace</span>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3 class="text-h3 mb-2">Tatuaje Top</h3>
-                        <p class="metric-highlight">SEO & Branding</p>
-                        <p class="text-sm text-secondary mb-4">Plataforma de conexión entre artistas y clientes.</p>
-                         <span class="text-sm" style="opacity: 0.5;">Ver Web <i class="ph ph-arrow-up-right"></i></span>
-                    </div>
-                </article>
-
-                <article class="portfolio-card">
-                    <div class="portfolio-img-holder">
                         <img src="/assets/imgwebs/Clinically (2).webp" alt="Clinically App">
                         <div class="portfolio-overlay">
-                            <span class="badge">SaaS / App</span>
+                            <span class="badge">Salud / SaaS</span>
                         </div>
                     </div>
                     <div class="portfolio-content">
-                        <h3 class="text-h3 mb-2">Clinically</h3>
-                        <p class="metric-highlight">UX/UI Design</p>
-                        <p class="text-sm text-secondary mb-4">Diseño de interfaz para software de gestión clínica.</p>
-                         <span class="text-sm" style="opacity: 0.5;">Ver Web <i class="ph ph-arrow-up-right"></i></span>
+                        <div class="mb-2">
+                            <h3 class="text-h3">Clinically</h3>
+                            <p class="text-sm text-secondary">Resultados Inmediatos</p>
+                        </div>
+
+                        <p class="metric-highlight">2x Clientes (Mes 1)</p>
+                        
+                        <p class="text-sm text-secondary mb-4">
+                            Rediseño estético total para transmitir confianza. Lanzamos campañas de captación que duplicaron la base de pacientes en los primeros 30 días de gestión.
+                        </p>
+                        
+                        <div class="service-tags">
+                            <span class="tag">Diseño UI/UX</span>
+                            <span class="tag">Meta Ads</span>
+                            <span class="tag">Landing Page</span>
+                        </div>
                     </div>
                 </article>
 
@@ -151,19 +243,69 @@
         </div>
     </section>
 
-    <section class="section-cta reveal" style="background-color: var(--bg-dark); color: white; padding: 5rem 0; text-align: center;">
+    <section class="section-cta reveal" style="background-color: var(--bg-dark); color: white; padding: 6rem 0; text-align: center;">
         <div class="container">
-            <h2 class="text-h2 mb-4" style="color: white;">¿Tu proyecto es el próximo?</h2>
+            <h2 class="text-h2 mb-4" style="color: white;">¿Querés resultados similares?</h2>
             <p class="text-lg mb-4" style="color: var(--text-inverse); max-width: 600px; margin: 0 auto 2rem auto;">
-                Analizamos tu negocio para ver si podemos replicar estos resultados contigo.
+                Analizamos tu negocio gratis para ver si tenés el potencial de escalar como ellos.
             </p>
             <a href="https://wa.me/5493476245523" class="btn btn-inverse">
-                Quiero cotizar mi proyecto <i class="ph ph-whatsapp-logo"></i>
+                Quiero mi Auditoría Gratis <i class="ph ph-whatsapp-logo"></i>
             </a>
         </div>
     </section>
 
-    <div id="footer-container"></div>
+    <div id="footer-container">
+            <footer class="footer-main">
+                <div class="container">
+                    <div class="grid-3">
+                        <div>
+                            <a href="/index.html" class="logo mb-4" style="font-size: 1.25rem;">
+                                <span>A</span>Algoritmia
+                            </a>
+                            <p class="text-sm text-secondary" style="max-width: 250px;">
+                                Growth Partner para negocios que buscan escalar su facturación, no sus excusas.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-uppercase mb-4">Mapa del Sitio</h4>
+                            <ul class="footer-links">
+                                <li><a href="/index.html#metodo">Nuestro Método</a></li>
+                                <li><a href="/clientes.html">Casos de Éxito</a></li>
+                                <li><a href="/contacto.html">Contacto Directo</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="text-uppercase mb-4">Contacto</h4>
+                            <ul class="footer-links">
+                                <li>
+                                    <a href="mailto:algoritmiadesarrollos@gmail.com">
+                                        <i class="ph ph-envelope"></i> algoritmiadesarrollos@gmail.com
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://wa.me/5493476245523">
+                                        <i class="ph ph-whatsapp-logo"></i> +54 9 3476 24-5523
+                                    </a>
+                                </li>
+                                <li class="text-sm text-secondary">
+                                    <i class="ph ph-map-pin"></i> Rosario, Santa Fe, Argentina
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="footer-bottom mt-8" style="padding-top: 2rem; border-top: 1px solid var(--border-light); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                        <p class="text-sm text-secondary">© <span id="year">2025</span> Algoritmia Desarrollos. Todos los derechos reservados.</p>
+                        <div class="social-links flex-center" style="gap: 1rem;">
+                            <a href="https://instagram.com/algoritmia_desarrollos" target="_blank" aria-label="Instagram" style="color: var(--text-primary); text-decoration: none;"><i class="ph ph-instagram-logo" style="font-size: 1.25rem;"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+    </div>
 
     <script src="/js/tracking.js"></script> 
     <script src="/js/navbar.js"></script>
