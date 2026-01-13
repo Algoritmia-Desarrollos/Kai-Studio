@@ -840,17 +840,22 @@ p:last-child { margin-bottom: 0; }
     background: var(--bg-surface);
     border-radius: 24px; /* Bordes más redondeados estilo Apple */
     overflow: hidden;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); /* Transición ultra suave */
+    /* Cambiamos 'all' por propiedades específicas. Mucho más rápido. */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    /* Le avisa al navegador que esto se va a mover (Aceleración GPU) */
+    will-change: transform;
     border: 1px solid rgba(0,0,0,0.04); /* Borde sutil */
     display: flex;
     flex-direction: column;
     height: 100%;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.02); /* Sombra inicial muy suave */
+    /* Sombra inicial más ligera */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
 }
 
 .portfolio-card:hover {
-    transform: translateY(-6px) scale(1.01);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.08); /* Sombra difusa y elegante al hover */
+    /* Sombra optimizada: menos radio de expansión */
+    transform: translateY(-4px) scale(1.005);
+    box-shadow: 0 20px 40px -5px rgba(0,0,0,0.1);
     border-color: rgba(0,0,0,0.08);
 }
 
@@ -868,6 +873,10 @@ p:last-child { margin-bottom: 0; }
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+    /* Evita parpadeos en algunos navegadores */
+    backface-visibility: hidden; 
+    transform: translateZ(0);
 }
 
 .portfolio-card:hover .portfolio-img-holder img {
@@ -883,8 +892,11 @@ p:last-child { margin-bottom: 0; }
 }
 
 .badge {
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95); /* Blanco casi sólido */
+    border: 1px solid rgba(0,0,0,0.05);
+    /* ELIMINAMOS el backdrop-filter de los badges */
+    backdrop-filter: none !important; /* Apagamos el cálculo costoso */
+    -webkit-backdrop-filter: none !important;
     padding: 0.4rem 0.8rem;
     border-radius: 99px;
     font-size: 0.75rem;
@@ -892,7 +904,7 @@ p:last-child { margin-bottom: 0; }
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--color-black);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 /* Contenido Texto */
@@ -930,4 +942,10 @@ p:last-child { margin-bottom: 0; }
 .link-arrow:hover {
     gap: 0.8rem;
     text-decoration: underline;
+}
+
+/* 4. Ajuste para la animación de entrada (Reveal) */
+.reveal {
+    /* Asegura que la animación de entrada no cause repintados masivos */
+    will-change: opacity, transform;
 }
