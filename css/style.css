@@ -798,6 +798,10 @@ h1, h2, h3 {
     margin-top: 5rem;
 }
 /* --- READABILITY IMPROVEMENTS --- */
+.portfolio-card {
+    content-visibility: auto;
+    contain-intrinsic-size: 600px 500px; /* Approximate size of card */
+}
 p { margin-bottom: 1.5rem; }
 p:last-child { margin-bottom: 0; }
 
